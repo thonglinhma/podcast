@@ -58,6 +58,9 @@
 		B9D160DC177C10FF00FE0061 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D1177C10FF00FE0061 /* AFURLConnectionOperation.m */; };
 		B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D3177C10FF00FE0061 /* AFXMLRequestOperation.m */; };
 		B9D160DE177C10FF00FE0061 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D5177C10FF00FE0061 /* UIImageView+AFNetworking.m */; };
+		B9D160E6177C125900FE0061 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E1177C125900FE0061 /* IISideController.m */; };
+		B9D160E7177C125900FE0061 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E3177C125900FE0061 /* IIViewDeckController.m */; };
+		B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E5177C125900FE0061 /* IIWrapController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +171,12 @@
 		B9D160D3177C10FF00FE0061 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		B9D160D4177C10FF00FE0061 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		B9D160D5177C10FF00FE0061 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		B9D160E0177C125900FE0061 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = Vendor/ViewDeck/ViewDeck/IISideController.h; sourceTree = "<group>"; };
+		B9D160E1177C125900FE0061 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = Vendor/ViewDeck/ViewDeck/IISideController.m; sourceTree = "<group>"; };
+		B9D160E2177C125900FE0061 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Vendor/ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		B9D160E3177C125900FE0061 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Vendor/ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
+		B9D160E4177C125900FE0061 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = Vendor/ViewDeck/ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
+		B9D160E5177C125900FE0061 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = Vendor/ViewDeck/ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +289,7 @@
 		B9D16064177C0FC300FE0061 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B9D160DF177C123A00FE0061 /* ViewDeck */,
 				B9D1606B177C0FFA00FE0061 /* AFNetworking */,
 				B9D16065177C0FCA00FE0061 /* Nimbus */,
 			);
@@ -412,6 +422,19 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		B9D160DF177C123A00FE0061 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				B9D160E0177C125900FE0061 /* IISideController.h */,
+				B9D160E1177C125900FE0061 /* IISideController.m */,
+				B9D160E2177C125900FE0061 /* IIViewDeckController.h */,
+				B9D160E3177C125900FE0061 /* IIViewDeckController.m */,
+				B9D160E4177C125900FE0061 /* IIWrapController.h */,
+				B9D160E5177C125900FE0061 /* IIWrapController.m */,
+			);
+			name = ViewDeck;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -530,13 +553,16 @@
 				B9D160AF177C10D900FE0061 /* NIInvocationMethods.m in Sources */,
 				B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */,
 				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
+				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
 				B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */,
 				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
 				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
 				B9D1603C177C0B9A00FE0061 /* main.m in Sources */,
 				B9D160B8177C10D900FE0061 /* NISnapshotRotation.m in Sources */,
+				B9D160E6177C125900FE0061 /* IISideController.m in Sources */,
 				B9D160DB177C10FF00FE0061 /* AFPropertyListRequestOperation.m in Sources */,
 				B9D160AE177C10D900FE0061 /* NIInMemoryCache.m in Sources */,
+				B9D160E7177C125900FE0061 /* IIViewDeckController.m in Sources */,
 				B9D160B1177C10D900FE0061 /* NINetworkActivity.m in Sources */,
 				B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */,
 				B9D160DA177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m in Sources */,
