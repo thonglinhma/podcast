@@ -19,6 +19,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="FpP-Vu-DBQ">
+            <objects>
+                <viewController id="jUL-B4-B2a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6kY-q9-eOj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOI-lw-ohR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="-101"/>
+        </scene>
     </scenes>
     <classes>
         <class className="ViewController" superclassName="UIViewController">
