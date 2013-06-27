@@ -14,7 +14,6 @@
 		B9D1603C177C0B9A00FE0061 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1603B177C0B9A00FE0061 /* main.m */; };
 		B9D16040177C0B9A00FE0061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1603F177C0B9A00FE0061 /* AppDelegate.m */; };
 		B9D16043177C0B9A00FE0061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D16041177C0B9A00FE0061 /* Main.storyboard */; };
-		B9D16046177C0B9A00FE0061 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16045177C0B9A00FE0061 /* ViewController.m */; };
 		B9D16048177C0B9A00FE0061 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D16047177C0B9A00FE0061 /* Images.xcassets */; };
 		B9D1604F177C0B9A00FE0061 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1604E177C0B9A00FE0061 /* XCTest.framework */; };
 		B9D16050177C0B9A00FE0061 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1602F177C0B9A00FE0061 /* Foundation.framework */; };
@@ -61,6 +60,18 @@
 		B9D160E6177C125900FE0061 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E1177C125900FE0061 /* IISideController.m */; };
 		B9D160E7177C125900FE0061 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E3177C125900FE0061 /* IIViewDeckController.m */; };
 		B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160E5177C125900FE0061 /* IIWrapController.m */; };
+		B9D160EB177C12A500FE0061 /* ALMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160EA177C12A500FE0061 /* ALMenuViewController.m */; };
+		B9D160EE177C12D400FE0061 /* ALMostPopularPodcastsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160ED177C12D400FE0061 /* ALMostPopularPodcastsViewController.m */; };
+		B9D160F1177C13C100FE0061 /* ALStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160F0177C13C100FE0061 /* ALStoryboard.m */; };
+		B9D160F4177C15CE00FE0061 /* ALMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160F3177C15CE00FE0061 /* ALMenuCell.m */; };
+		B9D160F7177C17CB00FE0061 /* ALSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160F6177C17CB00FE0061 /* ALSettingViewController.m */; };
+		B9D160FA177C184B00FE0061 /* ALMyPodcastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160F9177C184B00FE0061 /* ALMyPodcastViewController.m */; };
+		B9D160FD177C1FA500FE0061 /* ALPodcastPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160FC177C1FA500FE0061 /* ALPodcastPlayerViewController.m */; };
+		B9D16100177C272F00FE0061 /* ALPodcastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160FF177C272F00FE0061 /* ALPodcastCell.m */; };
+		B9D16103177C2AA400FE0061 /* ALPodcastPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */; };
+		B9D16105177C2AB400FE0061 /* ALPodcastPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */; };
+		B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */; };
+		B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +96,6 @@
 		B9D1603E177C0B9A00FE0061 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9D1603F177C0B9A00FE0061 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B9D16042177C0B9A00FE0061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B9D16044177C0B9A00FE0061 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9D16045177C0B9A00FE0061 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B9D16047177C0B9A00FE0061 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B9D1604D177C0B9A00FE0061 /* PodcastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D1604E177C0B9A00FE0061 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -177,6 +186,30 @@
 		B9D160E3177C125900FE0061 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Vendor/ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		B9D160E4177C125900FE0061 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = Vendor/ViewDeck/ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
 		B9D160E5177C125900FE0061 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = Vendor/ViewDeck/ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
+		B9D160E9177C12A500FE0061 /* ALMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMenuViewController.h; sourceTree = "<group>"; };
+		B9D160EA177C12A500FE0061 /* ALMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMenuViewController.m; sourceTree = "<group>"; };
+		B9D160EC177C12D400FE0061 /* ALMostPopularPodcastsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMostPopularPodcastsViewController.h; sourceTree = "<group>"; };
+		B9D160ED177C12D400FE0061 /* ALMostPopularPodcastsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMostPopularPodcastsViewController.m; sourceTree = "<group>"; };
+		B9D160EF177C13C100FE0061 /* ALStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALStoryboard.h; sourceTree = "<group>"; };
+		B9D160F0177C13C100FE0061 /* ALStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALStoryboard.m; sourceTree = "<group>"; };
+		B9D160F2177C15CE00FE0061 /* ALMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMenuCell.h; sourceTree = "<group>"; };
+		B9D160F3177C15CE00FE0061 /* ALMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMenuCell.m; sourceTree = "<group>"; };
+		B9D160F5177C17CB00FE0061 /* ALSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSettingViewController.h; sourceTree = "<group>"; };
+		B9D160F6177C17CB00FE0061 /* ALSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSettingViewController.m; sourceTree = "<group>"; };
+		B9D160F8177C184B00FE0061 /* ALMyPodcastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMyPodcastViewController.h; sourceTree = "<group>"; };
+		B9D160F9177C184B00FE0061 /* ALMyPodcastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMyPodcastViewController.m; sourceTree = "<group>"; };
+		B9D160FB177C1FA500FE0061 /* ALPodcastPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastPlayerViewController.h; sourceTree = "<group>"; };
+		B9D160FC177C1FA500FE0061 /* ALPodcastPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastPlayerViewController.m; sourceTree = "<group>"; };
+		B9D160FE177C272F00FE0061 /* ALPodcastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastCell.h; sourceTree = "<group>"; };
+		B9D160FF177C272F00FE0061 /* ALPodcastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastCell.m; sourceTree = "<group>"; };
+		B9D16101177C2AA400FE0061 /* ALPodcastPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastPlayerView.h; sourceTree = "<group>"; };
+		B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastPlayerView.m; sourceTree = "<group>"; };
+		B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALPodcastPlayerView.xib; sourceTree = "<group>"; };
+		B9D16107177C362A00FE0061 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVPullToRefresh.h; path = Vendor/SVPullToRefresh/SVPullToRefresh/SVPullToRefresh.h; sourceTree = "<group>"; };
+		B9D16108177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVInfiniteScrolling.h"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVInfiniteScrolling.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		B9D1610A177C362A00FE0061 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVPullToRefresh.h"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVPullToRefresh.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,10 +282,10 @@
 				B9D1603E177C0B9A00FE0061 /* AppDelegate.h */,
 				B9D1603F177C0B9A00FE0061 /* AppDelegate.m */,
 				B9D16041177C0B9A00FE0061 /* Main.storyboard */,
-				B9D16044177C0B9A00FE0061 /* ViewController.h */,
-				B9D16045177C0B9A00FE0061 /* ViewController.m */,
 				B9D16047177C0B9A00FE0061 /* Images.xcassets */,
 				B9D16036177C0B9A00FE0061 /* Supporting Files */,
+				B9D160EF177C13C100FE0061 /* ALStoryboard.h */,
+				B9D160F0177C13C100FE0061 /* ALStoryboard.m */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -289,6 +322,7 @@
 		B9D16064177C0FC300FE0061 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B9D16106177C361D00FE0061 /* SVPullToRefresh */,
 				B9D160DF177C123A00FE0061 /* ViewDeck */,
 				B9D1606B177C0FFA00FE0061 /* AFNetworking */,
 				B9D16065177C0FCA00FE0061 /* Nimbus */,
@@ -308,6 +342,16 @@
 		B9D16066177C0FD300FE0061 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9D160E9177C12A500FE0061 /* ALMenuViewController.h */,
+				B9D160EA177C12A500FE0061 /* ALMenuViewController.m */,
+				B9D160EC177C12D400FE0061 /* ALMostPopularPodcastsViewController.h */,
+				B9D160ED177C12D400FE0061 /* ALMostPopularPodcastsViewController.m */,
+				B9D160F5177C17CB00FE0061 /* ALSettingViewController.h */,
+				B9D160F6177C17CB00FE0061 /* ALSettingViewController.m */,
+				B9D160F8177C184B00FE0061 /* ALMyPodcastViewController.h */,
+				B9D160F9177C184B00FE0061 /* ALMyPodcastViewController.m */,
+				B9D160FB177C1FA500FE0061 /* ALPodcastPlayerViewController.h */,
+				B9D160FC177C1FA500FE0061 /* ALPodcastPlayerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +359,13 @@
 		B9D16067177C0FDB00FE0061 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9D160F2177C15CE00FE0061 /* ALMenuCell.h */,
+				B9D160F3177C15CE00FE0061 /* ALMenuCell.m */,
+				B9D160FE177C272F00FE0061 /* ALPodcastCell.h */,
+				B9D160FF177C272F00FE0061 /* ALPodcastCell.m */,
+				B9D16101177C2AA400FE0061 /* ALPodcastPlayerView.h */,
+				B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */,
+				B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -435,6 +486,18 @@
 			name = ViewDeck;
 			sourceTree = "<group>";
 		};
+		B9D16106177C361D00FE0061 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B9D16107177C362A00FE0061 /* SVPullToRefresh.h */,
+				B9D16108177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.h */,
+				B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */,
+				B9D1610A177C362A00FE0061 /* UIScrollView+SVPullToRefresh.h */,
+				B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			name = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,6 +574,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D16105177C2AB400FE0061 /* ALPodcastPlayerView.xib in Resources */,
 				B9D16048177C0B9A00FE0061 /* Images.xcassets in Resources */,
 				B9D1603A177C0B9A00FE0061 /* InfoPlist.strings in Resources */,
 				B9D16043177C0B9A00FE0061 /* Main.storyboard in Resources */,
@@ -532,25 +596,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D16046177C0B9A00FE0061 /* ViewController.m in Sources */,
+				B9D160FA177C184B00FE0061 /* ALMyPodcastViewController.m in Sources */,
 				B9D160A9177C10D900FE0061 /* NIDebuggingTools.m in Sources */,
+				B9D160F1177C13C100FE0061 /* ALStoryboard.m in Sources */,
 				B9D160B2177C10D900FE0061 /* NINonEmptyCollectionTesting.m in Sources */,
 				B9D160BA177C10D900FE0061 /* NIViewRecycler.m in Sources */,
 				B9D160BB177C10D900FE0061 /* NSString+NimbusCore.m in Sources */,
 				B9D160B5177C10D900FE0061 /* NIPaths.m in Sources */,
 				B9D16040177C0B9A00FE0061 /* AppDelegate.m in Sources */,
 				B9D160B4177C10D900FE0061 /* NIOperations.m in Sources */,
+				B9D160FD177C1FA500FE0061 /* ALPodcastPlayerViewController.m in Sources */,
 				B9D160AD177C10D900FE0061 /* NIImageUtilities.m in Sources */,
 				B9D160AB177C10D900FE0061 /* NIError.m in Sources */,
 				B9D160B3177C10D900FE0061 /* NINonRetainingCollections.m in Sources */,
 				B9D160A5177C10D900FE0061 /* NIActions.m in Sources */,
+				B9D160F7177C17CB00FE0061 /* ALSettingViewController.m in Sources */,
 				B9D160DE177C10FF00FE0061 /* UIImageView+AFNetworking.m in Sources */,
 				B9D160D7177C10FF00FE0061 /* AFHTTPRequestOperation.m in Sources */,
 				B9D160AC177C10D900FE0061 /* NIFoundationMethods.m in Sources */,
 				B9D160DC177C10FF00FE0061 /* AFURLConnectionOperation.m in Sources */,
+				B9D160F4177C15CE00FE0061 /* ALMenuCell.m in Sources */,
+				B9D16103177C2AA400FE0061 /* ALPodcastPlayerView.m in Sources */,
 				B9D160D9177C10FF00FE0061 /* AFJSONRequestOperation.m in Sources */,
 				B9D160D6177C10FF00FE0061 /* AFHTTPClient.m in Sources */,
 				B9D160AF177C10D900FE0061 /* NIInvocationMethods.m in Sources */,
+				B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */,
 				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
 				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
@@ -558,7 +628,9 @@
 				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
 				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
 				B9D1603C177C0B9A00FE0061 /* main.m in Sources */,
+				B9D160EE177C12D400FE0061 /* ALMostPopularPodcastsViewController.m in Sources */,
 				B9D160B8177C10D900FE0061 /* NISnapshotRotation.m in Sources */,
+				B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				B9D160E6177C125900FE0061 /* IISideController.m in Sources */,
 				B9D160DB177C10FF00FE0061 /* AFPropertyListRequestOperation.m in Sources */,
 				B9D160AE177C10D900FE0061 /* NIInMemoryCache.m in Sources */,
@@ -569,9 +641,11 @@
 				B9D160C2177C10EF00FE0061 /* NINetworkImageView.m in Sources */,
 				B9D160A6177C10D900FE0061 /* NIButtonUtilities.m in Sources */,
 				B9D160B9177C10D900FE0061 /* NIState.m in Sources */,
+				B9D160EB177C12A500FE0061 /* ALMenuViewController.m in Sources */,
 				B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */,
 				B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */,
 				B9D160A7177C10D900FE0061 /* NICommonMetrics.m in Sources */,
+				B9D16100177C272F00FE0061 /* ALPodcastCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,8 @@
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <QuartzCore/QuartzCore.h>
+
+    #import "ALStoryboard.h"
+    #import "IIViewDeckController.h"
+
 #endif

@@ -12,7 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    IIViewDeckController *deckController = (IIViewDeckController *)self.window.rootViewController;
+    deckController.leftController = [ALStoryboard menuController];
+    deckController.centerController = [[UINavigationController alloc] initWithRootViewController:[ALStoryboard mostPopularPodcastsController]];
+    
     return YES;
 }
 							

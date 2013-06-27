@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ALMyPodcastViewController.h
 //  Podcast
 //
 //  Created by Mike Tran on 6/27/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ALMyPodcastViewController : UICollectionViewController
 
 @end
