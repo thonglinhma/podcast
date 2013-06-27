@@ -21,6 +21,43 @@
 		B9D16051177C0B9A00FE0061 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D16033177C0B9A00FE0061 /* UIKit.framework */; };
 		B9D16059177C0B9A00FE0061 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9D16057177C0B9A00FE0061 /* InfoPlist.strings */; };
 		B9D1605B177C0B9A00FE0061 /* PodcastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1605A177C0B9A00FE0061 /* PodcastTests.m */; };
+		B9D1606D177C106E00FE0061 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1606C177C106E00FE0061 /* QuartzCore.framework */; };
+		B9D1606F177C107B00FE0061 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1606E177C107B00FE0061 /* SystemConfiguration.framework */; };
+		B9D16071177C108200FE0061 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D16070177C108200FE0061 /* MobileCoreServices.framework */; };
+		B9D160A5177C10D900FE0061 /* NIActions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16073177C10D900FE0061 /* NIActions.m */; };
+		B9D160A6177C10D900FE0061 /* NIButtonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16076177C10D900FE0061 /* NIButtonUtilities.m */; };
+		B9D160A7177C10D900FE0061 /* NICommonMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16078177C10D900FE0061 /* NICommonMetrics.m */; };
+		B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1607A177C10D900FE0061 /* NIDataStructures.m */; };
+		B9D160A9177C10D900FE0061 /* NIDebuggingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1607C177C10D900FE0061 /* NIDebuggingTools.m */; };
+		B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1607E177C10D900FE0061 /* NIDeviceOrientation.m */; };
+		B9D160AB177C10D900FE0061 /* NIError.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16080177C10D900FE0061 /* NIError.m */; };
+		B9D160AC177C10D900FE0061 /* NIFoundationMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16082177C10D900FE0061 /* NIFoundationMethods.m */; };
+		B9D160AD177C10D900FE0061 /* NIImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16084177C10D900FE0061 /* NIImageUtilities.m */; };
+		B9D160AE177C10D900FE0061 /* NIInMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16086177C10D900FE0061 /* NIInMemoryCache.m */; };
+		B9D160AF177C10D900FE0061 /* NIInvocationMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16088177C10D900FE0061 /* NIInvocationMethods.m */; };
+		B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1608C177C10D900FE0061 /* NINavigationAppearance.m */; };
+		B9D160B1177C10D900FE0061 /* NINetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1608E177C10D900FE0061 /* NINetworkActivity.m */; };
+		B9D160B2177C10D900FE0061 /* NINonEmptyCollectionTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16090177C10D900FE0061 /* NINonEmptyCollectionTesting.m */; };
+		B9D160B3177C10D900FE0061 /* NINonRetainingCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16092177C10D900FE0061 /* NINonRetainingCollections.m */; };
+		B9D160B4177C10D900FE0061 /* NIOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16094177C10D900FE0061 /* NIOperations.m */; };
+		B9D160B5177C10D900FE0061 /* NIPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16097177C10D900FE0061 /* NIPaths.m */; };
+		B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1609A177C10D900FE0061 /* NIRuntimeClassModifications.m */; };
+		B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1609C177C10D900FE0061 /* NISDKAvailability.m */; };
+		B9D160B8177C10D900FE0061 /* NISnapshotRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1609E177C10D900FE0061 /* NISnapshotRotation.m */; };
+		B9D160B9177C10D900FE0061 /* NIState.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160A0177C10D900FE0061 /* NIState.m */; };
+		B9D160BA177C10D900FE0061 /* NIViewRecycler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160A2177C10D900FE0061 /* NIViewRecycler.m */; };
+		B9D160BB177C10D900FE0061 /* NSString+NimbusCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160A4177C10D900FE0061 /* NSString+NimbusCore.m */; };
+		B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160BD177C10EF00FE0061 /* NIImageProcessing.m */; };
+		B9D160C2177C10EF00FE0061 /* NINetworkImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160C0177C10EF00FE0061 /* NINetworkImageView.m */; };
+		B9D160D6177C10FF00FE0061 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160C4177C10FF00FE0061 /* AFHTTPClient.m */; };
+		B9D160D7177C10FF00FE0061 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160C6177C10FF00FE0061 /* AFHTTPRequestOperation.m */; };
+		B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160C8177C10FF00FE0061 /* AFImageRequestOperation.m */; };
+		B9D160D9177C10FF00FE0061 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160CA177C10FF00FE0061 /* AFJSONRequestOperation.m */; };
+		B9D160DA177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160CC177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m */; };
+		B9D160DB177C10FF00FE0061 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160CF177C10FF00FE0061 /* AFPropertyListRequestOperation.m */; };
+		B9D160DC177C10FF00FE0061 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D1177C10FF00FE0061 /* AFURLConnectionOperation.m */; };
+		B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D3177C10FF00FE0061 /* AFXMLRequestOperation.m */; };
+		B9D160DE177C10FF00FE0061 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160D5177C10FF00FE0061 /* UIImageView+AFNetworking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +90,84 @@
 		B9D16056177C0B9A00FE0061 /* PodcastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PodcastTests-Info.plist"; sourceTree = "<group>"; };
 		B9D16058177C0B9A00FE0061 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B9D1605A177C0B9A00FE0061 /* PodcastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PodcastTests.m; sourceTree = "<group>"; };
+		B9D1606C177C106E00FE0061 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B9D1606E177C107B00FE0061 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B9D16070177C108200FE0061 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B9D16072177C10D900FE0061 /* NIActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIActions.h; path = Vendor/Nimbus/src/core/src/NIActions.h; sourceTree = "<group>"; };
+		B9D16073177C10D900FE0061 /* NIActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIActions.m; path = Vendor/Nimbus/src/core/src/NIActions.m; sourceTree = "<group>"; };
+		B9D16074177C10D900FE0061 /* NIActions+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NIActions+Subclassing.h"; path = "Vendor/Nimbus/src/core/src/NIActions+Subclassing.h"; sourceTree = "<group>"; };
+		B9D16075177C10D900FE0061 /* NIButtonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIButtonUtilities.h; path = Vendor/Nimbus/src/core/src/NIButtonUtilities.h; sourceTree = "<group>"; };
+		B9D16076177C10D900FE0061 /* NIButtonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIButtonUtilities.m; path = Vendor/Nimbus/src/core/src/NIButtonUtilities.m; sourceTree = "<group>"; };
+		B9D16077177C10D900FE0061 /* NICommonMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NICommonMetrics.h; path = Vendor/Nimbus/src/core/src/NICommonMetrics.h; sourceTree = "<group>"; };
+		B9D16078177C10D900FE0061 /* NICommonMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NICommonMetrics.m; path = Vendor/Nimbus/src/core/src/NICommonMetrics.m; sourceTree = "<group>"; };
+		B9D16079177C10D900FE0061 /* NIDataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIDataStructures.h; path = Vendor/Nimbus/src/core/src/NIDataStructures.h; sourceTree = "<group>"; };
+		B9D1607A177C10D900FE0061 /* NIDataStructures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIDataStructures.m; path = Vendor/Nimbus/src/core/src/NIDataStructures.m; sourceTree = "<group>"; };
+		B9D1607B177C10D900FE0061 /* NIDebuggingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIDebuggingTools.h; path = Vendor/Nimbus/src/core/src/NIDebuggingTools.h; sourceTree = "<group>"; };
+		B9D1607C177C10D900FE0061 /* NIDebuggingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIDebuggingTools.m; path = Vendor/Nimbus/src/core/src/NIDebuggingTools.m; sourceTree = "<group>"; };
+		B9D1607D177C10D900FE0061 /* NIDeviceOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIDeviceOrientation.h; path = Vendor/Nimbus/src/core/src/NIDeviceOrientation.h; sourceTree = "<group>"; };
+		B9D1607E177C10D900FE0061 /* NIDeviceOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIDeviceOrientation.m; path = Vendor/Nimbus/src/core/src/NIDeviceOrientation.m; sourceTree = "<group>"; };
+		B9D1607F177C10D900FE0061 /* NIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIError.h; path = Vendor/Nimbus/src/core/src/NIError.h; sourceTree = "<group>"; };
+		B9D16080177C10D900FE0061 /* NIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIError.m; path = Vendor/Nimbus/src/core/src/NIError.m; sourceTree = "<group>"; };
+		B9D16081177C10D900FE0061 /* NIFoundationMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIFoundationMethods.h; path = Vendor/Nimbus/src/core/src/NIFoundationMethods.h; sourceTree = "<group>"; };
+		B9D16082177C10D900FE0061 /* NIFoundationMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIFoundationMethods.m; path = Vendor/Nimbus/src/core/src/NIFoundationMethods.m; sourceTree = "<group>"; };
+		B9D16083177C10D900FE0061 /* NIImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIImageUtilities.h; path = Vendor/Nimbus/src/core/src/NIImageUtilities.h; sourceTree = "<group>"; };
+		B9D16084177C10D900FE0061 /* NIImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIImageUtilities.m; path = Vendor/Nimbus/src/core/src/NIImageUtilities.m; sourceTree = "<group>"; };
+		B9D16085177C10D900FE0061 /* NIInMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIInMemoryCache.h; path = Vendor/Nimbus/src/core/src/NIInMemoryCache.h; sourceTree = "<group>"; };
+		B9D16086177C10D900FE0061 /* NIInMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIInMemoryCache.m; path = Vendor/Nimbus/src/core/src/NIInMemoryCache.m; sourceTree = "<group>"; };
+		B9D16087177C10D900FE0061 /* NIInvocationMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIInvocationMethods.h; path = Vendor/Nimbus/src/core/src/NIInvocationMethods.h; sourceTree = "<group>"; };
+		B9D16088177C10D900FE0061 /* NIInvocationMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIInvocationMethods.m; path = Vendor/Nimbus/src/core/src/NIInvocationMethods.m; sourceTree = "<group>"; };
+		B9D16089177C10D900FE0061 /* NimbusCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NimbusCore.h; path = Vendor/Nimbus/src/core/src/NimbusCore.h; sourceTree = "<group>"; };
+		B9D1608A177C10D900FE0061 /* NimbusCore+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NimbusCore+Additions.h"; path = "Vendor/Nimbus/src/core/src/NimbusCore+Additions.h"; sourceTree = "<group>"; };
+		B9D1608B177C10D900FE0061 /* NINavigationAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NINavigationAppearance.h; path = Vendor/Nimbus/src/core/src/NINavigationAppearance.h; sourceTree = "<group>"; };
+		B9D1608C177C10D900FE0061 /* NINavigationAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINavigationAppearance.m; path = Vendor/Nimbus/src/core/src/NINavigationAppearance.m; sourceTree = "<group>"; };
+		B9D1608D177C10D900FE0061 /* NINetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NINetworkActivity.h; path = Vendor/Nimbus/src/core/src/NINetworkActivity.h; sourceTree = "<group>"; };
+		B9D1608E177C10D900FE0061 /* NINetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINetworkActivity.m; path = Vendor/Nimbus/src/core/src/NINetworkActivity.m; sourceTree = "<group>"; };
+		B9D1608F177C10D900FE0061 /* NINonEmptyCollectionTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NINonEmptyCollectionTesting.h; path = Vendor/Nimbus/src/core/src/NINonEmptyCollectionTesting.h; sourceTree = "<group>"; };
+		B9D16090177C10D900FE0061 /* NINonEmptyCollectionTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINonEmptyCollectionTesting.m; path = Vendor/Nimbus/src/core/src/NINonEmptyCollectionTesting.m; sourceTree = "<group>"; };
+		B9D16091177C10D900FE0061 /* NINonRetainingCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NINonRetainingCollections.h; path = Vendor/Nimbus/src/core/src/NINonRetainingCollections.h; sourceTree = "<group>"; };
+		B9D16092177C10D900FE0061 /* NINonRetainingCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINonRetainingCollections.m; path = Vendor/Nimbus/src/core/src/NINonRetainingCollections.m; sourceTree = "<group>"; };
+		B9D16093177C10D900FE0061 /* NIOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIOperations.h; path = Vendor/Nimbus/src/core/src/NIOperations.h; sourceTree = "<group>"; };
+		B9D16094177C10D900FE0061 /* NIOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIOperations.m; path = Vendor/Nimbus/src/core/src/NIOperations.m; sourceTree = "<group>"; };
+		B9D16095177C10D900FE0061 /* NIOperations+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NIOperations+Subclassing.h"; path = "Vendor/Nimbus/src/core/src/NIOperations+Subclassing.h"; sourceTree = "<group>"; };
+		B9D16096177C10D900FE0061 /* NIPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIPaths.h; path = Vendor/Nimbus/src/core/src/NIPaths.h; sourceTree = "<group>"; };
+		B9D16097177C10D900FE0061 /* NIPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIPaths.m; path = Vendor/Nimbus/src/core/src/NIPaths.m; sourceTree = "<group>"; };
+		B9D16098177C10D900FE0061 /* NIPreprocessorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIPreprocessorMacros.h; path = Vendor/Nimbus/src/core/src/NIPreprocessorMacros.h; sourceTree = "<group>"; };
+		B9D16099177C10D900FE0061 /* NIRuntimeClassModifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIRuntimeClassModifications.h; path = Vendor/Nimbus/src/core/src/NIRuntimeClassModifications.h; sourceTree = "<group>"; };
+		B9D1609A177C10D900FE0061 /* NIRuntimeClassModifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIRuntimeClassModifications.m; path = Vendor/Nimbus/src/core/src/NIRuntimeClassModifications.m; sourceTree = "<group>"; };
+		B9D1609B177C10D900FE0061 /* NISDKAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NISDKAvailability.h; path = Vendor/Nimbus/src/core/src/NISDKAvailability.h; sourceTree = "<group>"; };
+		B9D1609C177C10D900FE0061 /* NISDKAvailability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NISDKAvailability.m; path = Vendor/Nimbus/src/core/src/NISDKAvailability.m; sourceTree = "<group>"; };
+		B9D1609D177C10D900FE0061 /* NISnapshotRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NISnapshotRotation.h; path = Vendor/Nimbus/src/core/src/NISnapshotRotation.h; sourceTree = "<group>"; };
+		B9D1609E177C10D900FE0061 /* NISnapshotRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NISnapshotRotation.m; path = Vendor/Nimbus/src/core/src/NISnapshotRotation.m; sourceTree = "<group>"; };
+		B9D1609F177C10D900FE0061 /* NIState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIState.h; path = Vendor/Nimbus/src/core/src/NIState.h; sourceTree = "<group>"; };
+		B9D160A0177C10D900FE0061 /* NIState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIState.m; path = Vendor/Nimbus/src/core/src/NIState.m; sourceTree = "<group>"; };
+		B9D160A1177C10D900FE0061 /* NIViewRecycler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIViewRecycler.h; path = Vendor/Nimbus/src/core/src/NIViewRecycler.h; sourceTree = "<group>"; };
+		B9D160A2177C10D900FE0061 /* NIViewRecycler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIViewRecycler.m; path = Vendor/Nimbus/src/core/src/NIViewRecycler.m; sourceTree = "<group>"; };
+		B9D160A3177C10D900FE0061 /* NSString+NimbusCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NimbusCore.h"; path = "Vendor/Nimbus/src/core/src/NSString+NimbusCore.h"; sourceTree = "<group>"; };
+		B9D160A4177C10D900FE0061 /* NSString+NimbusCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NimbusCore.m"; path = "Vendor/Nimbus/src/core/src/NSString+NimbusCore.m"; sourceTree = "<group>"; };
+		B9D160BC177C10EF00FE0061 /* NIImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIImageProcessing.h; path = Vendor/Nimbus/src/networkimage/src/NIImageProcessing.h; sourceTree = "<group>"; };
+		B9D160BD177C10EF00FE0061 /* NIImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIImageProcessing.m; path = Vendor/Nimbus/src/networkimage/src/NIImageProcessing.m; sourceTree = "<group>"; };
+		B9D160BE177C10EF00FE0061 /* NimbusNetworkImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NimbusNetworkImage.h; path = Vendor/Nimbus/src/networkimage/src/NimbusNetworkImage.h; sourceTree = "<group>"; };
+		B9D160BF177C10EF00FE0061 /* NINetworkImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NINetworkImageView.h; path = Vendor/Nimbus/src/networkimage/src/NINetworkImageView.h; sourceTree = "<group>"; };
+		B9D160C0177C10EF00FE0061 /* NINetworkImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINetworkImageView.m; path = Vendor/Nimbus/src/networkimage/src/NINetworkImageView.m; sourceTree = "<group>"; };
+		B9D160C3177C10FF00FE0061 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
+		B9D160C4177C10FF00FE0061 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
+		B9D160C5177C10FF00FE0061 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		B9D160C6177C10FF00FE0061 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		B9D160C7177C10FF00FE0061 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFImageRequestOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFImageRequestOperation.h; sourceTree = "<group>"; };
+		B9D160C8177C10FF00FE0061 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFImageRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFImageRequestOperation.m; sourceTree = "<group>"; };
+		B9D160C9177C10FF00FE0061 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFJSONRequestOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		B9D160CA177C10FF00FE0061 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFJSONRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		B9D160CB177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		B9D160CC177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		B9D160CD177C10FF00FE0061 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		B9D160CE177C10FF00FE0061 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFPropertyListRequestOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		B9D160CF177C10FF00FE0061 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFPropertyListRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		B9D160D0177C10FF00FE0061 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		B9D160D1177C10FF00FE0061 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		B9D160D2177C10FF00FE0061 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		B9D160D3177C10FF00FE0061 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		B9D160D4177C10FF00FE0061 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		B9D160D5177C10FF00FE0061 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Vendor/Nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D16071177C108200FE0061 /* MobileCoreServices.framework in Frameworks */,
+				B9D1606F177C107B00FE0061 /* SystemConfiguration.framework in Frameworks */,
+				B9D1606D177C106E00FE0061 /* QuartzCore.framework in Frameworks */,
 				B9D16032177C0B9A00FE0061 /* CoreGraphics.framework in Frameworks */,
 				B9D16034177C0B9A00FE0061 /* UIKit.framework in Frameworks */,
 				B9D16030177C0B9A00FE0061 /* Foundation.framework in Frameworks */,
@@ -82,6 +200,7 @@
 		B9D16023177C0B9A00FE0061 = {
 			isa = PBXGroup;
 			children = (
+				B9D16064177C0FC300FE0061 /* Vendor */,
 				B9D16035177C0B9A00FE0061 /* Podcast */,
 				B9D16054177C0B9A00FE0061 /* PodcastTests */,
 				B9D1602E177C0B9A00FE0061 /* Frameworks */,
@@ -101,6 +220,9 @@
 		B9D1602E177C0B9A00FE0061 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9D16070177C108200FE0061 /* MobileCoreServices.framework */,
+				B9D1606E177C107B00FE0061 /* SystemConfiguration.framework */,
+				B9D1606C177C106E00FE0061 /* QuartzCore.framework */,
 				B9D1602F177C0B9A00FE0061 /* Foundation.framework */,
 				B9D16031177C0B9A00FE0061 /* CoreGraphics.framework */,
 				B9D16033177C0B9A00FE0061 /* UIKit.framework */,
@@ -112,6 +234,9 @@
 		B9D16035177C0B9A00FE0061 /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
+				B9D16068177C0FE000FE0061 /* Models */,
+				B9D16067177C0FDB00FE0061 /* Views */,
+				B9D16066177C0FD300FE0061 /* Controllers */,
 				B9D1603E177C0B9A00FE0061 /* AppDelegate.h */,
 				B9D1603F177C0B9A00FE0061 /* AppDelegate.m */,
 				B9D16041177C0B9A00FE0061 /* Main.storyboard */,
@@ -150,6 +275,141 @@
 				B9D16057177C0B9A00FE0061 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9D16064177C0FC300FE0061 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1606B177C0FFA00FE0061 /* AFNetworking */,
+				B9D16065177C0FCA00FE0061 /* Nimbus */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		B9D16065177C0FCA00FE0061 /* Nimbus */ = {
+			isa = PBXGroup;
+			children = (
+				B9D1606A177C0FF300FE0061 /* Network Image */,
+				B9D16069177C0FEC00FE0061 /* Core */,
+			);
+			name = Nimbus;
+			sourceTree = "<group>";
+		};
+		B9D16066177C0FD300FE0061 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B9D16067177C0FDB00FE0061 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B9D16068177C0FE000FE0061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B9D16069177C0FEC00FE0061 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B9D16072177C10D900FE0061 /* NIActions.h */,
+				B9D16073177C10D900FE0061 /* NIActions.m */,
+				B9D16074177C10D900FE0061 /* NIActions+Subclassing.h */,
+				B9D16075177C10D900FE0061 /* NIButtonUtilities.h */,
+				B9D16076177C10D900FE0061 /* NIButtonUtilities.m */,
+				B9D16077177C10D900FE0061 /* NICommonMetrics.h */,
+				B9D16078177C10D900FE0061 /* NICommonMetrics.m */,
+				B9D16079177C10D900FE0061 /* NIDataStructures.h */,
+				B9D1607A177C10D900FE0061 /* NIDataStructures.m */,
+				B9D1607B177C10D900FE0061 /* NIDebuggingTools.h */,
+				B9D1607C177C10D900FE0061 /* NIDebuggingTools.m */,
+				B9D1607D177C10D900FE0061 /* NIDeviceOrientation.h */,
+				B9D1607E177C10D900FE0061 /* NIDeviceOrientation.m */,
+				B9D1607F177C10D900FE0061 /* NIError.h */,
+				B9D16080177C10D900FE0061 /* NIError.m */,
+				B9D16081177C10D900FE0061 /* NIFoundationMethods.h */,
+				B9D16082177C10D900FE0061 /* NIFoundationMethods.m */,
+				B9D16083177C10D900FE0061 /* NIImageUtilities.h */,
+				B9D16084177C10D900FE0061 /* NIImageUtilities.m */,
+				B9D16085177C10D900FE0061 /* NIInMemoryCache.h */,
+				B9D16086177C10D900FE0061 /* NIInMemoryCache.m */,
+				B9D16087177C10D900FE0061 /* NIInvocationMethods.h */,
+				B9D16088177C10D900FE0061 /* NIInvocationMethods.m */,
+				B9D16089177C10D900FE0061 /* NimbusCore.h */,
+				B9D1608A177C10D900FE0061 /* NimbusCore+Additions.h */,
+				B9D1608B177C10D900FE0061 /* NINavigationAppearance.h */,
+				B9D1608C177C10D900FE0061 /* NINavigationAppearance.m */,
+				B9D1608D177C10D900FE0061 /* NINetworkActivity.h */,
+				B9D1608E177C10D900FE0061 /* NINetworkActivity.m */,
+				B9D1608F177C10D900FE0061 /* NINonEmptyCollectionTesting.h */,
+				B9D16090177C10D900FE0061 /* NINonEmptyCollectionTesting.m */,
+				B9D16091177C10D900FE0061 /* NINonRetainingCollections.h */,
+				B9D16092177C10D900FE0061 /* NINonRetainingCollections.m */,
+				B9D16093177C10D900FE0061 /* NIOperations.h */,
+				B9D16094177C10D900FE0061 /* NIOperations.m */,
+				B9D16095177C10D900FE0061 /* NIOperations+Subclassing.h */,
+				B9D16096177C10D900FE0061 /* NIPaths.h */,
+				B9D16097177C10D900FE0061 /* NIPaths.m */,
+				B9D16098177C10D900FE0061 /* NIPreprocessorMacros.h */,
+				B9D16099177C10D900FE0061 /* NIRuntimeClassModifications.h */,
+				B9D1609A177C10D900FE0061 /* NIRuntimeClassModifications.m */,
+				B9D1609B177C10D900FE0061 /* NISDKAvailability.h */,
+				B9D1609C177C10D900FE0061 /* NISDKAvailability.m */,
+				B9D1609D177C10D900FE0061 /* NISnapshotRotation.h */,
+				B9D1609E177C10D900FE0061 /* NISnapshotRotation.m */,
+				B9D1609F177C10D900FE0061 /* NIState.h */,
+				B9D160A0177C10D900FE0061 /* NIState.m */,
+				B9D160A1177C10D900FE0061 /* NIViewRecycler.h */,
+				B9D160A2177C10D900FE0061 /* NIViewRecycler.m */,
+				B9D160A3177C10D900FE0061 /* NSString+NimbusCore.h */,
+				B9D160A4177C10D900FE0061 /* NSString+NimbusCore.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B9D1606A177C0FF300FE0061 /* Network Image */ = {
+			isa = PBXGroup;
+			children = (
+				B9D160BC177C10EF00FE0061 /* NIImageProcessing.h */,
+				B9D160BD177C10EF00FE0061 /* NIImageProcessing.m */,
+				B9D160BE177C10EF00FE0061 /* NimbusNetworkImage.h */,
+				B9D160BF177C10EF00FE0061 /* NINetworkImageView.h */,
+				B9D160C0177C10EF00FE0061 /* NINetworkImageView.m */,
+			);
+			name = "Network Image";
+			sourceTree = "<group>";
+		};
+		B9D1606B177C0FFA00FE0061 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B9D160C3177C10FF00FE0061 /* AFHTTPClient.h */,
+				B9D160C4177C10FF00FE0061 /* AFHTTPClient.m */,
+				B9D160C5177C10FF00FE0061 /* AFHTTPRequestOperation.h */,
+				B9D160C6177C10FF00FE0061 /* AFHTTPRequestOperation.m */,
+				B9D160C7177C10FF00FE0061 /* AFImageRequestOperation.h */,
+				B9D160C8177C10FF00FE0061 /* AFImageRequestOperation.m */,
+				B9D160C9177C10FF00FE0061 /* AFJSONRequestOperation.h */,
+				B9D160CA177C10FF00FE0061 /* AFJSONRequestOperation.m */,
+				B9D160CB177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.h */,
+				B9D160CC177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m */,
+				B9D160CD177C10FF00FE0061 /* AFNetworking.h */,
+				B9D160CE177C10FF00FE0061 /* AFPropertyListRequestOperation.h */,
+				B9D160CF177C10FF00FE0061 /* AFPropertyListRequestOperation.m */,
+				B9D160D0177C10FF00FE0061 /* AFURLConnectionOperation.h */,
+				B9D160D1177C10FF00FE0061 /* AFURLConnectionOperation.m */,
+				B9D160D2177C10FF00FE0061 /* AFXMLRequestOperation.h */,
+				B9D160D3177C10FF00FE0061 /* AFXMLRequestOperation.m */,
+				B9D160D4177C10FF00FE0061 /* UIImageView+AFNetworking.h */,
+				B9D160D5177C10FF00FE0061 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +510,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D16046177C0B9A00FE0061 /* ViewController.m in Sources */,
+				B9D160A9177C10D900FE0061 /* NIDebuggingTools.m in Sources */,
+				B9D160B2177C10D900FE0061 /* NINonEmptyCollectionTesting.m in Sources */,
+				B9D160BA177C10D900FE0061 /* NIViewRecycler.m in Sources */,
+				B9D160BB177C10D900FE0061 /* NSString+NimbusCore.m in Sources */,
+				B9D160B5177C10D900FE0061 /* NIPaths.m in Sources */,
 				B9D16040177C0B9A00FE0061 /* AppDelegate.m in Sources */,
+				B9D160B4177C10D900FE0061 /* NIOperations.m in Sources */,
+				B9D160AD177C10D900FE0061 /* NIImageUtilities.m in Sources */,
+				B9D160AB177C10D900FE0061 /* NIError.m in Sources */,
+				B9D160B3177C10D900FE0061 /* NINonRetainingCollections.m in Sources */,
+				B9D160A5177C10D900FE0061 /* NIActions.m in Sources */,
+				B9D160DE177C10FF00FE0061 /* UIImageView+AFNetworking.m in Sources */,
+				B9D160D7177C10FF00FE0061 /* AFHTTPRequestOperation.m in Sources */,
+				B9D160AC177C10D900FE0061 /* NIFoundationMethods.m in Sources */,
+				B9D160DC177C10FF00FE0061 /* AFURLConnectionOperation.m in Sources */,
+				B9D160D9177C10FF00FE0061 /* AFJSONRequestOperation.m in Sources */,
+				B9D160D6177C10FF00FE0061 /* AFHTTPClient.m in Sources */,
+				B9D160AF177C10D900FE0061 /* NIInvocationMethods.m in Sources */,
+				B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */,
+				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
+				B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */,
+				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
+				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
 				B9D1603C177C0B9A00FE0061 /* main.m in Sources */,
+				B9D160B8177C10D900FE0061 /* NISnapshotRotation.m in Sources */,
+				B9D160DB177C10FF00FE0061 /* AFPropertyListRequestOperation.m in Sources */,
+				B9D160AE177C10D900FE0061 /* NIInMemoryCache.m in Sources */,
+				B9D160B1177C10D900FE0061 /* NINetworkActivity.m in Sources */,
+				B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */,
+				B9D160DA177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B9D160C2177C10EF00FE0061 /* NINetworkImageView.m in Sources */,
+				B9D160A6177C10D900FE0061 /* NIButtonUtilities.m in Sources */,
+				B9D160B9177C10D900FE0061 /* NIState.m in Sources */,
+				B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */,
+				B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */,
+				B9D160A7177C10D900FE0061 /* NICommonMetrics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +671,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Podcast/Podcast-Prefix.pch";
 				INFOPLIST_FILE = "Podcast/Podcast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -390,6 +685,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Podcast/Podcast-Prefix.pch";
 				INFOPLIST_FILE = "Podcast/Podcast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
