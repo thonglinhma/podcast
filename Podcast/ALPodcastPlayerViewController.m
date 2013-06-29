@@ -9,12 +9,10 @@
 #import "ALPodcastPlayerViewController.h"
 #import "ALPodcastPlayerView.h"
 #import "SVPullToRefresh.h"
+#import "AlLiveBlurView.h"
 
-#define kALTableViewDefaultContentInset 500.0f
-
-@interface ALPodcastPlayerViewController ()
+@interface ALPodcastPlayerViewController () <ALPodcastPlayerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView2;
 @end
 
 @implementation ALPodcastPlayerViewController
@@ -24,13 +22,24 @@
 {
     [super viewDidLoad];
     
-    self.scrollView.contentInset = UIEdgeInsetsMake(kALTableViewDefaultContentInset, 0, 0, 0);
-    [self.scrollView addSubview:[ALPodcastPlayerView view]];
-    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    ALPodcastPlayerView *podcastPlayerView = [ALPodcastPlayerView view];
+    podcastPlayerView.delegate = self;
     
-    [_scrollView2 addPullToRefreshWithActionHandler:^{
+    
+    [self.view addSubview:podcastPlayerView];
+    
+    AlLiveBlurView *backgroundView = [[AlLiveBlurView alloc] initWithFrame:self.view.bounds];
+    backgroundView.originalImage = [UIImage imageNamed:@"wallpaper.png"];
+    backgroundView.scrollView = podcastPlayerView.scrollView;
+    backgroundView.isGlassEffectOn = YES;
+    [self.view insertSubview:backgroundView belowSubview:_scrollView];
+    
+    _scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    
+    [_scrollView addPullToRefreshWithActionHandler:^{
         // prepend data to dataSource, insert cells at top of table view
         // call [tableView.pullToRefreshView stopAnimating] when done
+        //[_scrollView.pullToRefreshView stopAnimating];
     }];
 }
 
@@ -39,5 +48,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)dealloc
+{
+}
+
+#pragma mark - ALPodcastPlayerViewDelegate
+
+- (void)podcastPlayerViewDidBeginPulling:(ALPodcastPlayerView *)view;
+{
+    [_scrollView setScrollEnabled:NO];
+}
+
+- (void)podcastPlayerView:(ALPodcastPlayerView *)view didChangePullOffset:(CGFloat)offset
+{
+    [_scrollView setContentOffset:CGPointMake(0, -offset)];
+}
+
+- (void)podcastPlayerViewDidEndPulling:(ALPodcastPlayerView *)view
+{
+    [_scrollView setScrollEnabled:YES];
+}
+
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EB177D46170000004E /* AlLiveBlurView.m */; };
+		B9C757EF177D87AF0000004E /* ALPodcastItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */; };
+		B9C757F2177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */; };
 		B9D16030177C0B9A00FE0061 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1602F177C0B9A00FE0061 /* Foundation.framework */; };
 		B9D16032177C0B9A00FE0061 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D16031177C0B9A00FE0061 /* CoreGraphics.framework */; };
 		B9D16034177C0B9A00FE0061 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D16033177C0B9A00FE0061 /* UIKit.framework */; };
@@ -85,6 +88,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9C757EA177D46170000004E /* AlLiveBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlLiveBlurView.h; sourceTree = "<group>"; };
+		B9C757EB177D46170000004E /* AlLiveBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlLiveBlurView.m; sourceTree = "<group>"; };
+		B9C757ED177D87AF0000004E /* ALPodcastItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastItemCell.h; sourceTree = "<group>"; };
+		B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastItemCell.m; sourceTree = "<group>"; };
+		B9C757F0177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDynamicCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDynamicCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		B9D1602C177C0B9A00FE0061 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D1602F177C0B9A00FE0061 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B9D16031177C0B9A00FE0061 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -366,6 +375,12 @@
 				B9D16101177C2AA400FE0061 /* ALPodcastPlayerView.h */,
 				B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */,
 				B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */,
+				B9C757EA177D46170000004E /* AlLiveBlurView.h */,
+				B9C757EB177D46170000004E /* AlLiveBlurView.m */,
+				B9C757ED177D87AF0000004E /* ALPodcastItemCell.h */,
+				B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */,
+				B9C757F0177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.h */,
+				B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -597,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D160FA177C184B00FE0061 /* ALMyPodcastViewController.m in Sources */,
+				B9C757F2177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m in Sources */,
 				B9D160A9177C10D900FE0061 /* NIDebuggingTools.m in Sources */,
 				B9D160F1177C13C100FE0061 /* ALStoryboard.m in Sources */,
 				B9D160B2177C10D900FE0061 /* NINonEmptyCollectionTesting.m in Sources */,
@@ -624,6 +640,7 @@
 				B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */,
 				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
 				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
+				B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */,
 				B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */,
 				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
 				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
@@ -639,6 +656,7 @@
 				B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */,
 				B9D160DA177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B9D160C2177C10EF00FE0061 /* NINetworkImageView.m in Sources */,
+				B9C757EF177D87AF0000004E /* ALPodcastItemCell.m in Sources */,
 				B9D160A6177C10D900FE0061 /* NIButtonUtilities.m in Sources */,
 				B9D160B9177C10D900FE0061 /* NIState.m in Sources */,
 				B9D160EB177C12A500FE0061 /* ALMenuViewController.m in Sources */,
@@ -850,6 +868,7 @@
 				B9D16060177C0B9A00FE0061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9D16061177C0B9A00FE0061 /* Build configuration list for PBXNativeTarget "PodcastTests" */ = {
 			isa = XCConfigurationList;
@@ -858,6 +877,7 @@
 				B9D16063177C0B9A00FE0061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
