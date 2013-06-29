@@ -7,3 +7,6 @@
 [submodule "Vendor/SVPullToRefresh"]
 	path = Vendor/SVPullToRefresh
 	url = https://github.com/samvermette/SVPullToRefresh.git
+[submodule "Vendor/DOUAudioStreamer"]
+	path = Vendor/DOUAudioStreamer
+	url = https://github.com/douban/DOUAudioStreamer.git
