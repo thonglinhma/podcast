@@ -7,14 +7,14 @@
 //
 
 #import <Accelerate/Accelerate.h>
-#import "AlLiveBlurView.h"
+#import "ALLiveBlurView.h"
 
-@interface AlLiveBlurView()
+@interface ALLiveBlurView()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIView *backgroundGlassView;
 @end
 
-@implementation AlLiveBlurView
+@implementation ALLiveBlurView
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -157,4 +157,5 @@
         self.backgroundGlassView.alpha = MAX(0.0, MIN(self.backgroundImageView.alpha - self.initialGlassLevel, self.initialGlassLevel));
     }
 }
+
 @end

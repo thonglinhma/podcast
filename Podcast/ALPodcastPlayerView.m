@@ -8,13 +8,15 @@
 
 #import "ALPodcastPlayerView.h"
 #import "ALPodcastItemCell.h"
+#import "ALFeedParser.h"
 
 #define PULL_THRESHOLD 20
-#define kALDefaultContentInset 500.0f
+#define kALDefaultContentInset 400.0f
 
 @interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *feedItems;
 
 - (void)scrollingEnded;
 @end
@@ -25,26 +27,35 @@
 
 + (instancetype)view
 {
-    static id sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[[UINib nibWithNibName:@"ALPodcastPlayerView" bundle:nil]
-                           instantiateWithOwner:self
-                           options:nil] objectAtIndex:0];;
-    });
-    
-    return sharedInstance;
+    return [[[UINib nibWithNibName:@"ALPodcastPlayerView" bundle:nil]
+             instantiateWithOwner:self
+             options:nil] objectAtIndex:0];
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
+    if (!_feedItems) {
+        self.feedItems = [NSArray array];
+    }
+    
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
-    _scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+    _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds));
     
     [_collectionView registerClass:[ALPodcastItemCell class] forCellWithReuseIdentifier:@"Cell"];
+    
+    __weak ALPodcastPlayerView *weakSelf = self;
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.eslpod.com/feed.xml"]];
+    [ALFeedParser parseRSSFeedForRequest:request
+                                 success:^(NSArray * feedItems) {
+                                     weakSelf.feedItems = [feedItems copy];
+                                     [weakSelf.collectionView reloadData];
+                                 }
+                                 failure:^(NSError *error){
+                                 }];
 }
 
 #pragma mark - Private methods
@@ -58,9 +69,12 @@
     
     if (offset > -kALDefaultContentInset) {
         offset = fabs(kALDefaultContentInset + offset);
-        
+
         if (offset > PULL_THRESHOLD*5) {
-            _scrollView.contentOffset =  CGPointMake(0, -50);
+            if (offset < kALDefaultContentInset) {
+                 _scrollView.contentOffset =  CGPointMake(0, -50);
+            }
+           
         } else {
             _scrollView.contentOffset = CGPointMake(0, -kALDefaultContentInset);
         }
@@ -113,7 +127,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 50;
+    return [_feedItems count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -126,5 +140,12 @@
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+}
 
 @end

@@ -9,10 +9,14 @@
 #import "ALPodcastPlayerViewController.h"
 #import "ALPodcastPlayerView.h"
 #import "SVPullToRefresh.h"
-#import "AlLiveBlurView.h"
+#import "ALLiveBlurView.h"
 
 @interface ALPodcastPlayerViewController () <ALPodcastPlayerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) ALPodcastPlayerView *podcastPlayerView;
+@property (nonatomic, strong)  ALLiveBlurView *liveBlurView;
+
+- (IBAction)actionClose:(id)sender;
 @end
 
 @implementation ALPodcastPlayerViewController
@@ -24,15 +28,16 @@
     
     ALPodcastPlayerView *podcastPlayerView = [ALPodcastPlayerView view];
     podcastPlayerView.delegate = self;
+    [_scrollView insertSubview:podcastPlayerView atIndex:0];
+    self.podcastPlayerView = podcastPlayerView;
+
     
-    
-    [self.view addSubview:podcastPlayerView];
-    
-    AlLiveBlurView *backgroundView = [[AlLiveBlurView alloc] initWithFrame:self.view.bounds];
-    backgroundView.originalImage = [UIImage imageNamed:@"wallpaper.png"];
-    backgroundView.scrollView = podcastPlayerView.scrollView;
-    backgroundView.isGlassEffectOn = YES;
-    [self.view insertSubview:backgroundView belowSubview:_scrollView];
+    ALLiveBlurView *liveBlurView = [[ALLiveBlurView alloc] initWithFrame:self.view.bounds];
+    liveBlurView.originalImage = [UIImage imageNamed:@"wallpaper.png"];
+    liveBlurView.scrollView = podcastPlayerView.scrollView;
+    liveBlurView.isGlassEffectOn = YES;
+    [self.view insertSubview:liveBlurView belowSubview:_scrollView];
+    self.liveBlurView = liveBlurView;
     
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
     
@@ -51,6 +56,8 @@
 
 - (void)dealloc
 {
+    [_podcastPlayerView.scrollView removeObserver:_liveBlurView forKeyPath:@"contentOffset"];
+     _podcastPlayerView.delegate = nil;
 }
 
 #pragma mark - ALPodcastPlayerViewDelegate
@@ -70,5 +77,11 @@
     [_scrollView setScrollEnabled:YES];
 }
 
+#pragma mark - IBActions
+
+- (IBAction)actionClose:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

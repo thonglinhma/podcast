@@ -12,7 +12,7 @@
 #define kDKBlurredBackgroundDefaultGlassLevel 0.2f
 #define kDKBlurredBackgroundDefaultGlassColor [UIColor whiteColor]
 
-@interface AlLiveBlurView : NINetworkImageView
+@interface ALLiveBlurView : NINetworkImageView
 
 @property (nonatomic, strong) UIImage *originalImage;
 @property (nonatomic, weak) UIScrollView *scrollView;
