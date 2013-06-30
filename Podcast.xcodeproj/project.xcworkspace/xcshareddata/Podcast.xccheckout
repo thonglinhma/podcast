@@ -18,6 +18,8 @@
 		<string>https://github.com/samvermette/SVPullToRefresh.git</string>
 		<key>BFBF9DD1-EBDF-4C59-BFF0-63E59B68E793</key>
 		<string>https://github.com/Inferis/ViewDeck.git</string>
+		<key>DDD32361-A1B2-4A2D-8BBF-500A4B127081</key>
+		<string>https://github.com/ZaBlanc/RaptureXML.git</string>
 		<key>FBAA5191-A59C-40FE-8AC4-EE2253EA4D2A</key>
 		<string>https://github.com/AFNetworking/AFNetworking.git</string>
 	</dict>
@@ -35,6 +37,8 @@
 		<string>../../Vendor/SVPullToRefresh</string>
 		<key>BFBF9DD1-EBDF-4C59-BFF0-63E59B68E793</key>
 		<string>../../Vendor/ViewDeck</string>
+		<key>DDD32361-A1B2-4A2D-8BBF-500A4B127081</key>
+		<string>../../Vendor/RaptureXML</string>
 		<key>FBAA5191-A59C-40FE-8AC4-EE2253EA4D2A</key>
 		<string>../../Vendor/Nimbus/thirdparty/AFNetworking</string>
 	</dict>
@@ -93,6 +97,14 @@
 			<string>10830BFA-D9F4-45FC-9F38-0F400C9397E0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DOUAudioStreamer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DDD32361-A1B2-4A2D-8BBF-500A4B127081</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RaptureXML</string>
 		</dict>
 	</array>
 </dict>

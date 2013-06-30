@@ -97,6 +97,7 @@
 		DB208287177ED8F3001DC559 /* ALFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB208286177ED8F2001DC559 /* ALFeedParser.m */; };
 		DB20828A177ED90F001DC559 /* ALFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB208289177ED90F001DC559 /* ALFeedInfo.m */; };
 		DB20828D177ED91E001DC559 /* ALFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20828C177ED91E001DC559 /* ALFeedItem.m */; };
+		DB5D2A83177FDC6E00DA1DEB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +288,8 @@
 		DB208289177ED90F001DC559 /* ALFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedInfo.m; sourceTree = "<group>"; };
 		DB20828B177ED91E001DC559 /* ALFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedItem.h; sourceTree = "<group>"; };
 		DB20828C177ED91E001DC559 /* ALFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedItem.m; sourceTree = "<group>"; };
+		DB5D2A81177FDC6E00DA1DEB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXMLElement.h; path = Vendor/RaptureXML/RaptureXML/RXMLElement.h; sourceTree = "<group>"; };
+		DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RXMLElement.m; path = Vendor/RaptureXML/RaptureXML/RXMLElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +407,7 @@
 		B9D16064177C0FC300FE0061 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				DB5D2A80177FDC5D00DA1DEB /* RaptureXML */,
 				DB208244177E8B4A001DC559 /* DOUAudioStreamer */,
 				B9D16106177C361D00FE0061 /* SVPullToRefresh */,
 				B9D160DF177C123A00FE0061 /* ViewDeck */,
@@ -645,6 +649,15 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		DB5D2A80177FDC5D00DA1DEB /* RaptureXML */ = {
+			isa = PBXGroup;
+			children = (
+				DB5D2A81177FDC6E00DA1DEB /* RXMLElement.h */,
+				DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */,
+			);
+			name = RaptureXML;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -766,6 +779,7 @@
 				B9D160A5177C10D900FE0061 /* NIActions.m in Sources */,
 				DB208279177E8B5C001DC559 /* DOUEAGLView.m in Sources */,
 				DB208276177E8B5C001DC559 /* DOUAudioStreamer.m in Sources */,
+				DB5D2A83177FDC6E00DA1DEB /* RXMLElement.m in Sources */,
 				B9D160F7177C17CB00FE0061 /* ALSettingViewController.m in Sources */,
 				DB208278177E8B5C001DC559 /* DOUEAGL1View.m in Sources */,
 				DB208273177E8B5C001DC559 /* DOUAudioPlaybackItem.m in Sources */,

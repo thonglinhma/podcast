@@ -10,3 +10,6 @@
 [submodule "Vendor/DOUAudioStreamer"]
 	path = Vendor/DOUAudioStreamer
 	url = https://github.com/douban/DOUAudioStreamer.git
+[submodule "Vendor/RaptureXML"]
+	path = Vendor/RaptureXML
+	url = https://github.com/ZaBlanc/RaptureXML.git
