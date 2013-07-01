@@ -12,7 +12,7 @@
 
 @interface ALPodcastPlayerView : UIView
 @property (nonatomic, weak) id<ALPodcastPlayerViewDelegate>delegate;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, readonly, strong) UIScrollView *scrollView;
 
 + (instancetype)view;
 @end

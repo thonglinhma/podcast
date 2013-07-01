@@ -10,4 +10,9 @@
 
 @implementation ALFeedItem
 
+- (NSURL *)audioFileURL
+{
+    return [NSURL URLWithString:_itemUrl];
+}
+
 @end

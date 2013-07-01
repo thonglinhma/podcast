@@ -18,10 +18,7 @@
     if (self)
     {
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.itemSize = (CGSize){290, 50};
-        self.sectionInset = UIEdgeInsetsMake(4, 10, 14, 10);
-        self.minimumInteritemSpacing = 10;
-        self.minimumLineSpacing = 10;
+        self.itemSize = (CGSize){320, 70};
     }
     return self;
 }
@@ -32,9 +29,6 @@
     
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.itemSize = (CGSize){290, 50};
-    self.sectionInset = UIEdgeInsetsMake(4, 10, 14, 10);
-    self.minimumInteritemSpacing = 10;
-    self.minimumLineSpacing = 10;
 }
 
 - (void)prepareLayout
@@ -88,6 +82,12 @@
     }
     
     return NO;
+}
+
+- (void)removeAllBehaviors
+{
+    [_dynamicAnimator removeAllBehaviors];
+    _dynamicAnimator = nil;
 }
 
 @end

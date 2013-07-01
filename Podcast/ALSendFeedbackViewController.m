@@ -1,18 +1,18 @@
 //
-//  ALMyPodcastViewController.m
+//  ALSendFeedbackViewController.m
 //  Podcast
 //
-//  Created by Mike Tran on 6/27/13.
+//  Created by Mike Tran on 1/7/13.
 //  Copyright (c) 2013 Ogilvy & Mather (s) Pte Ltd. All rights reserved.
 //
 
-#import "ALMyPodcastViewController.h"
+#import "ALSendFeedbackViewController.h"
 
-@interface ALMyPodcastViewController ()
-
+@interface ALSendFeedbackViewController ()
+- (IBAction)cancelAction:(id)sender;
 @end
 
-@implementation ALMyPodcastViewController
+@implementation ALSendFeedbackViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +33,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)cancelAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

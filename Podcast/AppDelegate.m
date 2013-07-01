@@ -13,8 +13,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     IIViewDeckController *deckController = (IIViewDeckController *)self.window.rootViewController;
+    deckController.leftSize = 70;
+    
     deckController.leftController = [ALStoryboard menuController];
-    deckController.centerController = [[UINavigationController alloc] initWithRootViewController:[ALStoryboard mostPopularPodcastsController]];
+    deckController.centerController = [ALStoryboard podcastPlayerController];
     
     return YES;
 }

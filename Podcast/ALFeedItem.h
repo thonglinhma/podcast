@@ -7,16 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DOUAudioStreamer.h"
 
-@interface ALFeedItem : NSObject
+@interface ALFeedItem : NSObject <DOUAudioFile>
 @property (nonatomic, copy)   NSString *title;
 @property (nonatomic, copy)   NSString *itemDescription;
-@property (nonatomic, copy)   NSString *content;
-@property (nonatomic, strong) NSURL *link;
-@property (nonatomic, strong) NSURL *commentsLink;
-@property (nonatomic, strong) NSURL *commentsFeed;
-@property (nonatomic, strong) NSNumber *commentsCount;
+@property (nonatomic, copy)   NSString *itemUrl;
+@property (nonatomic, copy)   NSString *itemType;
 @property (nonatomic, strong) NSDate *pubDate;
 @property (nonatomic, strong) NSString *author;
-@property (nonatomic, strong) NSString *guid;
 @end

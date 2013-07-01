@@ -15,9 +15,8 @@
 
 - (UIViewController *)menuController;
 - (UIViewController *)settingController;
-- (UIViewController *)mostPopularPodcastsController;
-- (UIViewController *)myPodcastController;
 - (UIViewController *)podcastPlayerController;
+- (UIViewController *)sendFeedbackController;
 
 @end
 
@@ -54,19 +53,14 @@
     return [self.storyboard instantiateViewControllerWithIdentifier:@"sbALSettingIdentifier"];
 }
 
-- (UIViewController *)mostPopularPodcastsController
-{
-    return [self.storyboard instantiateViewControllerWithIdentifier:@"sbALMostPopularPodcastsIdentifier"];
-}
-
-- (UIViewController *)myPodcastController
-{
-    return [self.storyboard instantiateViewControllerWithIdentifier:@"sbALMyPodcastIdentifier"];
-}
-
 - (UIViewController *)podcastPlayerController
 {
     return [self.storyboard instantiateViewControllerWithIdentifier:@"sbALPodcastPlayerIdentifier"];
+}
+
+- (UIViewController *)sendFeedbackController
+{
+    return [self.storyboard instantiateViewControllerWithIdentifier:@"sbALSendFeedbackIdentifier"];
 }
 
 #pragma mark - Public static methods
@@ -81,19 +75,15 @@
     return [[self sharedInstance] settingController];
 }
 
-+ (UIViewController *)mostPopularPodcastsController
-{
-    return [[self sharedInstance] mostPopularPodcastsController];
-}
-
-+ (UIViewController *)myPodcastController
-{
-    return [[self sharedInstance] myPodcastController];
-}
 
 + (UIViewController *)podcastPlayerController
 {
     return [[self sharedInstance] podcastPlayerController];
+}
+
++ (UIViewController *)sendFeedbackController
+{
+    return [[self sharedInstance] sendFeedbackController];
 }
 
 @end

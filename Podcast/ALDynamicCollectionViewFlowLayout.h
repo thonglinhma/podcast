@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ALDynamicCollectionViewFlowLayout : UICollectionViewFlowLayout
-
+- (void)removeAllBehaviors;
 @end

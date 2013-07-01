@@ -7,16 +7,16 @@
 //
 
 #import "ALPodcastPlayerViewController.h"
+#import "IIViewDeckController.h"
 #import "ALPodcastPlayerView.h"
 #import "SVPullToRefresh.h"
 #import "ALLiveBlurView.h"
 
 @interface ALPodcastPlayerViewController () <ALPodcastPlayerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *buttonItem;
 @property (nonatomic, strong) ALPodcastPlayerView *podcastPlayerView;
 @property (nonatomic, strong)  ALLiveBlurView *liveBlurView;
-
-- (IBAction)actionClose:(id)sender;
 @end
 
 @implementation ALPodcastPlayerViewController
@@ -34,8 +34,10 @@
     
     ALLiveBlurView *liveBlurView = [[ALLiveBlurView alloc] initWithFrame:self.view.bounds];
     liveBlurView.originalImage = [UIImage imageNamed:@"wallpaper.png"];
-    liveBlurView.scrollView = podcastPlayerView.scrollView;
     liveBlurView.isGlassEffectOn = YES;
+    UIScrollView *scrollView = podcastPlayerView.scrollView;
+    liveBlurView.scrollView = scrollView;
+    [liveBlurView setBlurLevel:kDKBlurredBackgroundDefaultLevel];
     [self.view insertSubview:liveBlurView belowSubview:_scrollView];
     self.liveBlurView = liveBlurView;
     
@@ -46,6 +48,8 @@
         // call [tableView.pullToRefreshView stopAnimating] when done
         //[_scrollView.pullToRefreshView stopAnimating];
     }];
+    
+    [_buttonItem setAction:@selector(toggleLeftView)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,13 +79,6 @@
 - (void)podcastPlayerViewDidEndPulling:(ALPodcastPlayerView *)view
 {
     [_scrollView setScrollEnabled:YES];
-}
-
-#pragma mark - IBActions
-
-- (IBAction)actionClose:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

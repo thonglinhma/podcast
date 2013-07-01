@@ -12,8 +12,7 @@
 
 + (UIViewController *)menuController;
 + (UIViewController *)settingController;
-+ (UIViewController *)mostPopularPodcastsController;
-+ (UIViewController *)myPodcastController;
 + (UIViewController *)podcastPlayerController;
++ (UIViewController *)sendFeedbackController;
 
 @end

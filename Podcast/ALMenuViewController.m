@@ -25,9 +25,9 @@ static NSString *const kALMenuCellIdentifier = @"ALMenuCellIdentifier";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 4;
+        return 1;
     }
-    return 1;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -36,25 +36,21 @@ static NSString *const kALMenuCellIdentifier = @"ALMenuCellIdentifier";
     
     
     if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-                cell.menuTextLabel.text = @"My Podcast";
-                break;
-            case 1:
-                cell.menuTextLabel.text = @"Most Popular";
-                break;
-            case 2:
-                cell.menuTextLabel.text = @"Recommended";
-                break;
-            case 3:
-                cell.menuTextLabel.text = @"Newest";
-                break;
-            default:
-                break;
-        }
+        cell.menuTextLabel.text = @"ESL Podcast";
     }
     else {
-        cell.menuTextLabel.text = @"Settings";
+        switch (indexPath.row) {
+            case 0:
+                cell.menuTextLabel.text = @"Settings";
+                break;
+            case 1:
+                cell.menuTextLabel.text = @"Send Feedback";
+                break;
+            case 2:
+                cell.menuTextLabel.text = @"Rate This App";
+                break;
+        }
+        
     }
     
     return cell;
@@ -63,13 +59,21 @@ static NSString *const kALMenuCellIdentifier = @"ALMenuCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
-        if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *navController = (UINavigationController *)controller.centerController;
-            if (indexPath.section == 0) {
-            } else {
-                [navController pushViewController:[ALStoryboard settingController] animated:YES];
+        
+        if (indexPath.section == 1) {
+            UIViewController *presentController = nil;
+            switch (indexPath.row) {
+                case 0:
+                    presentController = [ALStoryboard settingController];
+                    break;
+                case 1:
+                    presentController = [ALStoryboard sendFeedbackController];
+                    break;
             }
+            if(presentController != nil) 
+                [controller.centerController presentViewController:presentController animated:YES completion:nil];
         }
+        
     }];
 }
 
