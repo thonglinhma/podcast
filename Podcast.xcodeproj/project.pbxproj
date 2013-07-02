@@ -100,6 +100,7 @@
 		DB5D2A85177FDC9D00DA1DEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A84177FDC9D00DA1DEB /* libz.dylib */; };
 		DB5D2A87177FDCA800DA1DEB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */; };
 		DB5D2A8B177FDE4C00DA1DEB /* AFRXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D2A8A177FDE4C00DA1DEB /* AFRXMLRequestOperation.m */; };
+		DBA6C578178181290063F7B3 /* Podcast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */; };
 		DBCCA47B17812B5600D0A09B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCA47A17812B5600D0A09B /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +296,7 @@
 		DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		DB5D2A89177FDE4C00DA1DEB /* AFRXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRXMLRequestOperation.h; sourceTree = "<group>"; };
 		DB5D2A8A177FDE4C00DA1DEB /* AFRXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFRXMLRequestOperation.m; sourceTree = "<group>"; };
+		DBA6C577178181290063F7B3 /* Podcast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Podcast.xcdatamodel; sourceTree = "<group>"; };
 		DBCCA47A17812B5600D0A09B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -479,6 +481,7 @@
 				DB208289177ED90F001DC559 /* ALFeedInfo.m */,
 				DB20828B177ED91E001DC559 /* ALFeedItem.h */,
 				DB20828C177ED91E001DC559 /* ALFeedItem.m */,
+				DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				B9D160E6177C125900FE0061 /* IISideController.m in Sources */,
 				DB208274177E8B5C001DC559 /* DOUAudioRenderer.m in Sources */,
+				DBA6C578178181290063F7B3 /* Podcast.xcdatamodeld in Sources */,
 				B9D160DB177C10FF00FE0061 /* AFPropertyListRequestOperation.m in Sources */,
 				B9D160AE177C10D900FE0061 /* NIInMemoryCache.m in Sources */,
 				B9D160E7177C125900FE0061 /* IIViewDeckController.m in Sources */,
@@ -1075,6 +1079,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DBA6C577178181290063F7B3 /* Podcast.xcdatamodel */,
+			);
+			currentVersion = DBA6C577178181290063F7B3 /* Podcast.xcdatamodel */;
+			path = Podcast.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B9D16024177C0B9A00FE0061 /* Project object */;
 }
