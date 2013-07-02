@@ -161,4 +161,32 @@ CGFloat edgeSizeFromCornerRadius(CGFloat cornerRadius) {
     return path;
 }
 
++ (UIImage *)playButtonImageWithColor:(UIColor *)color
+                                 size:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIBezierPath *path = [self bezierPathForPlayButtonInRect:rect];
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0f);
+    [color setFill];
+    [path fill];
+    path.lineWidth = 1;
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
++ (UIBezierPath *)bezierPathForPlayButtonInRect:(CGRect)rect
+{
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(CGRectGetMinX(rect),  CGRectGetMinY(rect))];
+    [path addLineToPoint:CGPointMake(CGRectGetMinX(rect), CGRectGetMinY(rect) + CGRectGetHeight(rect))];
+    [path addLineToPoint:CGPointMake(CGRectGetMinX(rect) + CGRectGetWidth(rect), CGRectGetMinY(rect) + CGRectGetHeight(rect)/2)];
+    [path addLineToPoint:CGPointMake(CGRectGetMinX(rect),  CGRectGetMinY(rect))];
+    [path closePath];
+    
+    return path;
+}
+
+
 @end

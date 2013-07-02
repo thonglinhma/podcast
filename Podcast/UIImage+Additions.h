@@ -28,4 +28,7 @@
 + (UIImage *)backButtonImageWithColor:(UIColor *)color
                             barMetrics:(UIBarMetrics)metrics
                           cornerRadius:(CGFloat)cornerRadius;
+
++ (UIImage *)playButtonImageWithColor:(UIColor *)color
+                                 size:(CGSize)size;
 @end
