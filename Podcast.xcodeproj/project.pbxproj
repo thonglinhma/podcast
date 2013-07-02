@@ -72,6 +72,8 @@
 		B9D16105177C2AB400FE0061 /* ALPodcastPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */; };
 		B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */; };
 		B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */; };
+		B9D9E37C1782C0150099F5A8 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */; };
+		B9D9E37D1782C0150099F5A8 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */; };
 		DB0132461780777E008445B2 /* ALUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0132451780777E008445B2 /* ALUIScrollView.m */; };
 		DB013249178081F0008445B2 /* ALPodcastPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB013248178081F0008445B2 /* ALPodcastPlayer.m */; };
 		DB01324C17809AA3008445B2 /* ALSendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01324B17809AA3008445B2 /* ALSendFeedbackViewController.m */; };
@@ -240,6 +242,10 @@
 		B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVInfiniteScrolling.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		B9D1610A177C362A00FE0061 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVPullToRefresh.h"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVPullToRefresh.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		B9D9E3781782C0150099F5A8 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		B9D9E37A1782C0150099F5A8 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		DB0132441780777E008445B2 /* ALUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALUIScrollView.h; sourceTree = "<group>"; };
 		DB0132451780777E008445B2 /* ALUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALUIScrollView.m; sourceTree = "<group>"; };
 		DB013247178081F0008445B2 /* ALPodcastPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastPlayer.h; sourceTree = "<group>"; };
@@ -374,6 +380,7 @@
 		B9D16035177C0B9A00FE0061 /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
+				B9D9E3771782C0020099F5A8 /* Additions */,
 				DB5D2A88177FDDF800DA1DEB /* AFNetworking Extensions */,
 				DB208284177ED811001DC559 /* Core */,
 				B9D16068177C0FE000FE0061 /* Models */,
@@ -607,6 +614,17 @@
 			name = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		B9D9E3771782C0020099F5A8 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B9D9E3781782C0150099F5A8 /* UIColor+Additions.h */,
+				B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */,
+				B9D9E37A1782C0150099F5A8 /* UIImage+Additions.h */,
+				B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 		DB208244177E8B4A001DC559 /* DOUAudioStreamer */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,6 +825,7 @@
 				DB20827B177E8B5C001DC559 /* NSData+DOUMappedFile.m in Sources */,
 				B9D160B3177C10D900FE0061 /* NINonRetainingCollections.m in Sources */,
 				B9D160A5177C10D900FE0061 /* NIActions.m in Sources */,
+				B9D9E37C1782C0150099F5A8 /* UIColor+Additions.m in Sources */,
 				DB208279177E8B5C001DC559 /* DOUEAGLView.m in Sources */,
 				DB208276177E8B5C001DC559 /* DOUAudioStreamer.m in Sources */,
 				DB5D2A83177FDC6E00DA1DEB /* RXMLElement.m in Sources */,
@@ -847,6 +866,7 @@
 				DB20827A177E8B5C001DC559 /* DOUSimpleHTTPRequest.m in Sources */,
 				DB20826C177E8B5C001DC559 /* DOUAudioAnalyzer+Default.m in Sources */,
 				DB20826D177E8B5C001DC559 /* DOUAudioDecoder.m in Sources */,
+				B9D9E37D1782C0150099F5A8 /* UIImage+Additions.m in Sources */,
 				B9D160DD177C10FF00FE0061 /* AFXMLRequestOperation.m in Sources */,
 				B9D160DA177C10FF00FE0061 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B9D160C2177C10EF00FE0061 /* NINetworkImageView.m in Sources */,
@@ -983,6 +1003,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eddy Chan (S78C45RX4U)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Podcast/Podcast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2";
@@ -998,6 +1019,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ogilvy & Mather (Singapore) Pte Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Podcast/Podcast-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2";

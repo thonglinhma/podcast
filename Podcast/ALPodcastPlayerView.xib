@@ -13,9 +13,6 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-Vt-7OG">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <connections>
-                        <outlet property="delegate" destination="bo1-B8-jCn" id="hNN-UW-QhX"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -25,7 +22,7 @@
                 <outlet property="collectionView" destination="pb2-5F-SZG" id="zKs-wF-c9E"/>
                 <outlet property="contentView" destination="SlG-VI-fho" id="8pX-jp-AoL"/>
                 <outlet property="contentView2" destination="mYy-YR-6TF" id="4P2-8U-oEZ"/>
-                <outlet property="descView" destination="jTb-YY-Y5b" id="PrY-5c-zyY"/>
+                <outlet property="descView" destination="sic-21-G0H" id="PiP-hY-fll"/>
                 <outlet property="imageView" destination="bw4-wO-Pul" id="zJc-a9-gqb"/>
                 <outlet property="labelDuration" destination="siR-gC-9cS" id="3t5-yt-bAq"/>
                 <outlet property="labelTimePlayed" destination="UaP-lI-AiL" id="7ro-UX-clK"/>
@@ -215,58 +212,17 @@
                         <outlet property="delegate" destination="bo1-B8-jCn" id="T6F-DC-riW"/>
                     </connections>
                 </collectionView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-YY-Y5b">
+                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sic-21-G0H">
                     <rect key="frame" x="335" y="0.0" width="290" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <attributes>
-                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                    <connections>
+                        <outlet property="delegate" destination="bo1-B8-jCn" id="h5R-fc-GOE"/>
+                    </connections>
+                </webView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <classes>
-        <class className="ALPodcastPlayerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ALPodcastPlayerView.h"/>
-            <relationships>
-                <relationship kind="action" name="actionNext:"/>
-                <relationship kind="action" name="actionPlayPause:"/>
-                <relationship kind="action" name="actionSliderProgress:"/>
-                <relationship kind="outlet" name="buttonPlayPause" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="contentView2" candidateClass="UIView"/>
-                <relationship kind="outlet" name="descView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="NINetworkImageView"/>
-                <relationship kind="outlet" name="labelDuration" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimePlayed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollView2" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sliderProgress" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="NINetworkImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NINetworkImageView.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
 </document>

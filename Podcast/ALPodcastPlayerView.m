@@ -17,6 +17,7 @@
 
 #define PULL_THRESHOLD 20
 #define kALDefaultContentInset 400.0f
+#define kALDefaultContentOffset 50
 
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
@@ -34,7 +35,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UILabel  *labelTimePlayed;
 @property (nonatomic, weak) IBOutlet UILabel  *labelDuration;
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
-@property (nonatomic, weak) IBOutlet UITextView *descView;
+@property (nonatomic, weak) IBOutlet UIWebView *descView;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
 @property (nonatomic, strong) NSArray *feedItems;
@@ -75,10 +76,12 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
         self.feedItems = [NSArray array];
     }
     
+    _descView.opaque = NO;
+    
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds));
-    _scrollView.contentOffset =  CGPointMake(0, -50);
+    _scrollView.contentOffset =  CGPointMake(0, -kALDefaultContentOffset);
     
     [_scrollView2 addSubview:_contentView2];
     _scrollView2.contentSize = CGSizeMake(CGRectGetWidth(_contentView2.bounds), CGRectGetHeight(_contentView2.bounds));
@@ -131,30 +134,6 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 #pragma mark - Private methods
 
-- (void)scrollingEnded
-{
-    [_delegate podcastPlayerViewDidEndPulling:self];
-    _pulling = NO;
-    
-    CGFloat offset =  _scrollView.contentOffset.y;
-    
-    if (offset > -kALDefaultContentInset) {
-        offset = fabs(kALDefaultContentInset + offset);
-
-        if (offset > PULL_THRESHOLD*5) {
-            if (offset < kALDefaultContentInset) {
-                 _scrollView.contentOffset =  CGPointMake(0, -55);
-            }
-           
-        } else {
-            _scrollView.contentOffset = CGPointMake(0, -kALDefaultContentInset);
-        }
-        
-    }
-    
-    _scrollView.transform = CGAffineTransformIdentity;
-}
-
 - (void)setupHintForAudioStreamer
 {
     NSUInteger nextIndex = _currentIndex + 1;
@@ -178,7 +157,8 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     ALFeedItem *feedItem = _feedItems[_currentIndex];
     
     _labelTitle.text = feedItem.title;
-    _descView.text = feedItem.itemDescription;
+    [_descView loadHTMLString:feedItem.itemDescription baseURL:nil];
+    //_descView.text = feedItem.itemDescription;
     
     _audioStreamer = [DOUAudioStreamer streamerWithAudioFile:feedItem];
     [_audioStreamer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusKVOKey];
@@ -309,29 +289,63 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 #pragma mark - UIScrollViewDelegate
 
+- (void)scrollingEnded
+{
+    [_delegate podcastPlayerViewDidEndPulling:self];
+    _pulling = NO;
+    
+    CGFloat offset =  _scrollView.contentOffset.y;
+    
+    if (offset > -kALDefaultContentInset) {
+        offset = fabs(kALDefaultContentInset + offset);
+        
+        if (offset > PULL_THRESHOLD*5) {
+            if (offset < kALDefaultContentInset) {
+                _scrollView.contentOffset =  CGPointMake(0, -kALDefaultContentOffset);
+            }
+            
+        } else {
+            _scrollView.contentOffset = CGPointMake(0, -kALDefaultContentInset);
+        }
+        
+    }
+    
+    _scrollView.transform = CGAffineTransformIdentity;
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offset =  scrollView.contentOffset.y;
     
-    if (offset > -kALDefaultContentInset) {
-        return;
-    }
-    
-    offset = fabs(kALDefaultContentInset + offset);
-    
-    if (offset > PULL_THRESHOLD && !_pulling) {
-        [_delegate podcastPlayerViewDidBeginPulling:self];
-        _pulling = YES;
-    }
-    
-    if (_pulling) {
-        CGFloat pullOffset = MAX(0, offset - PULL_THRESHOLD);
+    if (scrollView == _scrollView) {
         
+        if (offset > -kALDefaultContentInset) {
+            return;
+        }
         
-        [_delegate podcastPlayerView:self didChangePullOffset:pullOffset];
-        _scrollView.transform = CGAffineTransformMakeTranslation(0, pullOffset);
+        offset = fabs(kALDefaultContentInset + offset);
         
+        if (offset > PULL_THRESHOLD && !_pulling) {
+            [_delegate podcastPlayerViewDidBeginPulling:self];
+            _pulling = YES;
+        }
+        
+        if (_pulling) {
+            CGFloat pullOffset = MAX(0, offset - PULL_THRESHOLD);
+            
+            
+            [_delegate podcastPlayerView:self didChangePullOffset:pullOffset];
+            _scrollView.transform = CGAffineTransformMakeTranslation(0, pullOffset);
+            
+        }
+    } else if (scrollView == _collectionView) {
+        if (_scrollView.contentOffset.y == -kALDefaultContentOffset) return;
+        if (offset < -PULL_THRESHOLD*2) {
+            _scrollView.contentOffset = CGPointMake(0, -kALDefaultContentOffset);
+        }
     }
+
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -375,7 +389,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
-    _descView.text = cell.feedItem.itemDescription;
+    [_descView loadHTMLString:cell.feedItem.itemDescription baseURL:nil];
     [_scrollView2 setScrollEnabled:NO];
 }
 

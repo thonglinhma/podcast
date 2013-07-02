@@ -1,6 +1,9 @@
 //
 //  AlLiveBlurView.h
 //  Podcast
+//  Created by Dmitry Klimkin on 16/6/13.
+//  Copyright (c) 2013 Dmitry Klimkin. All rights reserved.
+//
 //
 //  Created by Mike Tran on 6/28/13.
 //  Copyright (c) 2013 Ogilvy & Mather (s) Pte Ltd. All rights reserved.
