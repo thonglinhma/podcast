@@ -78,7 +78,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds));
-    _scrollView.contentOffset =  CGPointMake(0, -55);
+    _scrollView.contentOffset =  CGPointMake(0, -50);
     
     [_scrollView2 addSubview:_contentView2];
     _scrollView2.contentSize = CGSizeMake(CGRectGetWidth(_contentView2.bounds), CGRectGetHeight(_contentView2.bounds));
