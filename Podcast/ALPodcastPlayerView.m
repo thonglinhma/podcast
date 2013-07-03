@@ -23,7 +23,7 @@ static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
 static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
-@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, ALPodcastItemCellDelegate>
+@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIWebViewDelegate, ALPodcastItemCellDelegate>
 @property (nonatomic, readwrite, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView2;
@@ -440,6 +440,15 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 - (void)podcastItemCellDidEndPulling:(ALPodcastItemCell *)cell
 {
     [_scrollView2 setScrollEnabled:YES];
+}
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",
+                          117];
+    [webView stringByEvaluatingJavaScriptFromString:jsString];
 }
 
 @end
