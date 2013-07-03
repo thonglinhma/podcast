@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94188C41783D33F00C2DCD1 /* ALPodcastStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188C31783D33F00C2DCD1 /* ALPodcastStore.m */; };
+		B94188D01783D75200C2DCD1 /* ALFeedItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188CF1783D75200C2DCD1 /* ALFeedItem+Additions.m */; };
+		B94188D81783DA3F00C2DCD1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94188D71783DA3F00C2DCD1 /* CoreData.framework */; };
+		B94188DB178401FC00C2DCD1 /* ALFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188DA178401FC00C2DCD1 /* ALFeedItem.m */; };
+		B94188DE178401FC00C2DCD1 /* ALFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */; };
 		B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EB177D46170000004E /* AlLiveBlurView.m */; };
 		B9C757EF177D87AF0000004E /* ALPodcastItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */; };
 		B9C757F2177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */; };
@@ -70,7 +75,6 @@
 		B9D160FD177C1FA500FE0061 /* ALPodcastPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D160FC177C1FA500FE0061 /* ALPodcastPlayerViewController.m */; };
 		B9D16103177C2AA400FE0061 /* ALPodcastPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */; };
 		B9D16105177C2AB400FE0061 /* ALPodcastPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */; };
-		B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */; };
 		B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */; };
 		B9D9E37C1782C0150099F5A8 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */; };
 		B9D9E37D1782C0150099F5A8 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */; };
@@ -96,8 +100,6 @@
 		DB20827B177E8B5C001DC559 /* NSData+DOUMappedFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20826A177E8B5C001DC559 /* NSData+DOUMappedFile.m */; };
 		DB20827E177E8B70001DC559 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20827C177E8B70001DC559 /* AudioToolbox.framework */; };
 		DB20827F177E8B70001DC559 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20827D177E8B70001DC559 /* CoreAudio.framework */; };
-		DB20828A177ED90F001DC559 /* ALFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB208289177ED90F001DC559 /* ALFeedInfo.m */; };
-		DB20828D177ED91E001DC559 /* ALFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20828C177ED91E001DC559 /* ALFeedItem.m */; };
 		DB5D2A83177FDC6E00DA1DEB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */; };
 		DB5D2A85177FDC9D00DA1DEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A84177FDC9D00DA1DEB /* libz.dylib */; };
 		DB5D2A87177FDCA800DA1DEB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */; };
@@ -117,6 +119,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94188C21783D33F00C2DCD1 /* ALPodcastStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastStore.h; sourceTree = "<group>"; };
+		B94188C31783D33F00C2DCD1 /* ALPodcastStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastStore.m; sourceTree = "<group>"; };
+		B94188CE1783D75200C2DCD1 /* ALFeedItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALFeedItem+Additions.h"; sourceTree = "<group>"; };
+		B94188CF1783D75200C2DCD1 /* ALFeedItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALFeedItem+Additions.m"; sourceTree = "<group>"; };
+		B94188D71783DA3F00C2DCD1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B94188D9178401FC00C2DCD1 /* ALFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedItem.h; sourceTree = "<group>"; };
+		B94188DA178401FC00C2DCD1 /* ALFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedItem.m; sourceTree = "<group>"; };
+		B94188DC178401FC00C2DCD1 /* ALFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedInfo.h; sourceTree = "<group>"; };
+		B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedInfo.m; sourceTree = "<group>"; };
 		B9C757EA177D46170000004E /* AlLiveBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlLiveBlurView.h; sourceTree = "<group>"; };
 		B9C757EB177D46170000004E /* AlLiveBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlLiveBlurView.m; sourceTree = "<group>"; };
 		B9C757ED177D87AF0000004E /* ALPodcastItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastItemCell.h; sourceTree = "<group>"; };
@@ -238,8 +249,6 @@
 		B9D16102177C2AA400FE0061 /* ALPodcastPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastPlayerView.m; sourceTree = "<group>"; };
 		B9D16104177C2AB400FE0061 /* ALPodcastPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALPodcastPlayerView.xib; sourceTree = "<group>"; };
 		B9D16107177C362A00FE0061 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVPullToRefresh.h; path = Vendor/SVPullToRefresh/SVPullToRefresh/SVPullToRefresh.h; sourceTree = "<group>"; };
-		B9D16108177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVInfiniteScrolling.h"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVInfiniteScrolling.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		B9D1610A177C362A00FE0061 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVPullToRefresh.h"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVPullToRefresh.m"; path = "Vendor/SVPullToRefresh/SVPullToRefresh/UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		B9D9E3781782C0150099F5A8 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -292,10 +301,6 @@
 		DB20826A177E8B5C001DC559 /* NSData+DOUMappedFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+DOUMappedFile.m"; path = "Vendor/DOUAudioStreamer/src/NSData+DOUMappedFile.m"; sourceTree = "<group>"; };
 		DB20827C177E8B70001DC559 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB20827D177E8B70001DC559 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		DB208288177ED90F001DC559 /* ALFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedInfo.h; sourceTree = "<group>"; };
-		DB208289177ED90F001DC559 /* ALFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedInfo.m; sourceTree = "<group>"; };
-		DB20828B177ED91E001DC559 /* ALFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedItem.h; sourceTree = "<group>"; };
-		DB20828C177ED91E001DC559 /* ALFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedItem.m; sourceTree = "<group>"; };
 		DB5D2A81177FDC6E00DA1DEB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXMLElement.h; path = Vendor/RaptureXML/RaptureXML/RXMLElement.h; sourceTree = "<group>"; };
 		DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RXMLElement.m; path = Vendor/RaptureXML/RaptureXML/RXMLElement.m; sourceTree = "<group>"; };
 		DB5D2A84177FDC9D00DA1DEB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -311,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94188D81783DA3F00C2DCD1 /* CoreData.framework in Frameworks */,
 				DBCCA47B17812B5600D0A09B /* Accelerate.framework in Frameworks */,
 				DB5D2A87177FDCA800DA1DEB /* libxml2.dylib in Frameworks */,
 				DB5D2A85177FDC9D00DA1DEB /* libz.dylib in Frameworks */,
@@ -361,6 +367,7 @@
 		B9D1602E177C0B9A00FE0061 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B94188D71783DA3F00C2DCD1 /* CoreData.framework */,
 				DBCCA47A17812B5600D0A09B /* Accelerate.framework */,
 				DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */,
 				DB5D2A84177FDC9D00DA1DEB /* libz.dylib */,
@@ -484,11 +491,15 @@
 		B9D16068177C0FE000FE0061 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB208288177ED90F001DC559 /* ALFeedInfo.h */,
-				DB208289177ED90F001DC559 /* ALFeedInfo.m */,
-				DB20828B177ED91E001DC559 /* ALFeedItem.h */,
-				DB20828C177ED91E001DC559 /* ALFeedItem.m */,
+				B94188D9178401FC00C2DCD1 /* ALFeedItem.h */,
+				B94188DA178401FC00C2DCD1 /* ALFeedItem.m */,
+				B94188DC178401FC00C2DCD1 /* ALFeedInfo.h */,
+				B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */,
 				DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */,
+				B94188C21783D33F00C2DCD1 /* ALPodcastStore.h */,
+				B94188C31783D33F00C2DCD1 /* ALPodcastStore.m */,
+				B94188CE1783D75200C2DCD1 /* ALFeedItem+Additions.h */,
+				B94188CF1783D75200C2DCD1 /* ALFeedItem+Additions.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -606,8 +617,6 @@
 			isa = PBXGroup;
 			children = (
 				B9D16107177C362A00FE0061 /* SVPullToRefresh.h */,
-				B9D16108177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.h */,
-				B9D16109177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m */,
 				B9D1610A177C362A00FE0061 /* UIScrollView+SVPullToRefresh.h */,
 				B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */,
 			);
@@ -834,8 +843,8 @@
 				DB208273177E8B5C001DC559 /* DOUAudioPlaybackItem.m in Sources */,
 				B9D160DE177C10FF00FE0061 /* UIImageView+AFNetworking.m in Sources */,
 				B9D160D7177C10FF00FE0061 /* AFHTTPRequestOperation.m in Sources */,
-				DB20828A177ED90F001DC559 /* ALFeedInfo.m in Sources */,
 				B9D160AC177C10D900FE0061 /* NIFoundationMethods.m in Sources */,
+				B94188DE178401FC00C2DCD1 /* ALFeedInfo.m in Sources */,
 				B9D160DC177C10FF00FE0061 /* AFURLConnectionOperation.m in Sources */,
 				B9D160F4177C15CE00FE0061 /* ALMenuCell.m in Sources */,
 				B9D16103177C2AA400FE0061 /* ALPodcastPlayerView.m in Sources */,
@@ -849,13 +858,14 @@
 				DB208275177E8B5C001DC559 /* DOUAudioSpatialAnalyzer.m in Sources */,
 				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
 				B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */,
+				B94188C41783D33F00C2DCD1 /* ALPodcastStore.m in Sources */,
 				B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */,
+				B94188DB178401FC00C2DCD1 /* ALFeedItem.m in Sources */,
 				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
 				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
 				B9D1603C177C0B9A00FE0061 /* main.m in Sources */,
 				DB208277177E8B5C001DC559 /* DOUAudioVisualizer.m in Sources */,
 				B9D160B8177C10D900FE0061 /* NISnapshotRotation.m in Sources */,
-				B9D1610C177C362A00FE0061 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				B9D160E6177C125900FE0061 /* IISideController.m in Sources */,
 				DB208274177E8B5C001DC559 /* DOUAudioRenderer.m in Sources */,
 				DBA6C578178181290063F7B3 /* Podcast.xcdatamodeld in Sources */,
@@ -878,9 +888,9 @@
 				DB5D2A8B177FDE4C00DA1DEB /* AFRXMLRequestOperation.m in Sources */,
 				B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */,
 				B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */,
+				B94188D01783D75200C2DCD1 /* ALFeedItem+Additions.m in Sources */,
 				DB0132461780777E008445B2 /* ALUIScrollView.m in Sources */,
 				B9D160A7177C10D900FE0061 /* NICommonMetrics.m in Sources */,
-				DB20828D177ED91E001DC559 /* ALFeedItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

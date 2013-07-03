@@ -10,10 +10,10 @@
 #import "ALPodcastItemCell.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFRXMLRequestOperation.h"
-#import "ALFeedItem.h"
 #import "ALDynamicCollectionViewFlowLayout.h"
 #import "NimbusNetworkImage.h"
 #import "DOUAudioStreamer.h"
+#import "ALFeedItem+Additions.h"
 
 #define PULL_THRESHOLD 20
 #define kALDefaultContentInset 400.0f
@@ -29,21 +29,25 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView2;
 @property (nonatomic, weak) IBOutlet UIView *contentView2;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet NINetworkImageView *imageView;
+@property (nonatomic, weak) IBOutlet NINetworkImageView *feedInfoImageView;
+@property (nonatomic, weak) IBOutlet UILabel *feedInfoTitleLabel;
 @property (nonatomic, weak) IBOutlet UISlider *sliderProgress;
 @property (nonatomic, weak) IBOutlet UIButton *buttonPlayPause;
 @property (nonatomic, weak) IBOutlet UILabel  *labelTimePlayed;
 @property (nonatomic, weak) IBOutlet UILabel  *labelDuration;
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
 @property (nonatomic, weak) IBOutlet UIWebView *descView;
+@property (nonatomic, weak) IBOutlet UILabel *totalFeedItemsLabel;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
 @property (nonatomic, strong) NSArray *feedItems;
+@property (nonatomic, strong) ALFeedInfo *feedInfo;
 
 - (void)scrollingEnded;
 - (void)setupHintForAudioStreamer;
 - (void)resetAudioStreamer;
 - (void)updateStatus;
+- (void)updateFeedInfoUI;
 
 - (IBAction)actionPlayPause:(id)sender;
 - (IBAction)actionNext:(id)sender;
@@ -72,11 +76,8 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     
     _currentIndex = 0;
     
-    if (!_feedItems) {
-        self.feedItems = [NSArray array];
-    }
-    
-    _descView.opaque = NO;
+    self.feedItems = [[ALPodcastStore sharedStore] fetchFeedItems];
+    self.feedInfo = [[ALPodcastStore sharedStore] fetchFeedInfo];
     
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
@@ -91,7 +92,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     self.dynamicLayout = dynamicLayout;
     [_collectionView registerClass:[ALPodcastItemCell class] forCellWithReuseIdentifier:kALPodcastItemCellIdentifier];
     
-    [_imageView setPathToNetworkImage:@"http://www.eslpod.com/iTunesLogos/ESLPodcast.jpg"];
+    [self updateFeedInfoUI];
     
     __weak ALPodcastPlayerView *weakSelf = self;
     
@@ -100,28 +101,53 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.eslpod.com/feed.xml"] cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:10];
     AFRXMLRequestOperation *operation = [AFRXMLRequestOperation RXMLRequestOperationWithRequest:request
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, RXMLElement *XMLElement) {
-                                                                                            NSMutableArray *feedItems = [NSMutableArray array];
                                                                                             
                                                                                             RXMLElement *channel = [XMLElement child:@"channel"];
                                                                                             
-                                                                                            NIDPRINT(@"Channel.Title: %@", [channel child:@"title"].text);
+                                                                                            ALFeedInfo *feedInfo = (ALFeedInfo *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedInfo" predicateWithFormat:@"link = %@" argumentArray:@[ [channel child:@"link"].text ]];
+                                                                                            
+                                                                                            if (feedInfo == nil) {
+                                                                                                feedInfo = [[ALPodcastStore sharedStore] newFeedInfo];
+                                                                                                feedInfo.link = [channel child:@"link"].text;
+                                                                                                feedInfo.title = [channel child:@"title"].text;
+                                                                                                feedInfo.copyright = [channel child:@"copyright"].text;
+                                                                                                feedInfo.imageUrl = [[channel child:@"image"] child:@"url"].text;
+                                                                                                
+                                                                                                weakSelf.feedInfo = feedInfo;
+                                                                                            }
+                                                                                            
                                                                                             
                                                                                             [channel iterate:@"item" usingBlock: ^(RXMLElement *el){
-                                                                                                NIDPRINT(@"%@", [el child:@"title"].text);
-                                                                                                ALFeedItem *feedItem = [[ALFeedItem alloc] init];
-                                                                                                feedItem.title = [el child:@"title"].text;
-                                                                                                feedItem.itemDescription = [el child:@"description"].text;
-                                                                                                feedItem.itemUrl = [[el child:@"enclosure"] attribute:@"url"];
-                                                                                                feedItem.itemType = [[el child:@"enclosure"] attribute:@"type"];
+                                                                                                ALFeedItem *feedItem = (ALFeedItem *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedItem" predicateWithFormat:@"link = %@" argumentArray:@[ [el child:@"link"].text ]];
+
                                                                                                 
-                                                                                                NIDPRINT(@"Guid %@", feedItem.itemUrl);
-                                                                                                
-                                                                                                [feedItems addObject:feedItem];
+                                                                                                if (feedItem == nil) {
+                                                                                                    feedItem = [[ALPodcastStore sharedStore] newFeedItem];
+                                                                                                    
+                                                                                                    feedItem.title = [el child:@"title"].text;
+                                                                                                    feedItem.link = [el child:@"link"].text;
+                                                                                                    feedItem.desc = [el child:@"description"].text;
+                                                                                                    feedItem.mediaUrl = [[el child:@"enclosure"] attribute:@"url"];
+                                                                                                    feedItem.mediaType = [[el child:@"enclosure"] attribute:@"type"];
+                                                                                                    
+                                                                                                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                                                                                                    
+                                                                                                    NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EN"];
+                                                                                                    [formatter setLocale:local];
+                                                                                                    [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
+                                                                                                    
+                                                                                                    feedItem.pubDate = [formatter dateFromString:[el child:@"pubDate"].text];
+                                                                                                }
+ 
                                                                                             }];
                                                                                             
-                                                                                            weakSelf.feedItems = [feedItems copy];
+                                                                                            
+                                                                                            [[ALPodcastStore sharedStore] saveChanges];
+                                                                                            
+                                                                                            weakSelf.feedItems =  [[ALPodcastStore sharedStore] reloadFetchFeedItems];
                                                                                             [weakSelf.dynamicLayout removeAllBehaviors];
                                                                                             [weakSelf.collectionView reloadData];
+                                                                                            [self updateFeedInfoUI];
                                                                                         }
                                                                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, RXMLElement *XMLElement){
                                                                                             NIDPRINT(@"Failure: %@", [error localizedDescription]);
@@ -133,6 +159,18 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 }
 
 #pragma mark - Private methods
+
+- (void)updateFeedInfoUI
+{
+    if (_feedInfoImageView != nil) {
+        _feedInfoTitleLabel.text = _feedInfo.title;
+        [_feedInfoImageView setPathToNetworkImage:_feedInfo.imageUrl];
+    }
+    
+    if (_feedItems != nil) {
+        _totalFeedItemsLabel.text = [NSString stringWithFormat:@"%d episodes", [_feedItems count]];
+    }
+}
 
 - (void)setupHintForAudioStreamer
 {
@@ -157,8 +195,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     ALFeedItem *feedItem = _feedItems[_currentIndex];
     
     _labelTitle.text = feedItem.title;
-    [_descView loadHTMLString:feedItem.itemDescription baseURL:nil];
-    //_descView.text = feedItem.itemDescription;
+    [_descView loadHTMLString:feedItem.desc baseURL:nil];
     
     _audioStreamer = [DOUAudioStreamer streamerWithAudioFile:feedItem];
     [_audioStreamer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusKVOKey];
@@ -188,9 +225,11 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
             break;
             
         case DOUAudioStreamerBuffering:
+            NIDPRINT(@"Buffering");
             break;
             
         case DOUAudioStreamerError:
+            NIDPRINT(@"Error");
             break;
     }
 }
@@ -389,7 +428,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
-    [_descView loadHTMLString:cell.feedItem.itemDescription baseURL:nil];
+    [_descView loadHTMLString:cell.feedItem.desc baseURL:nil];
     [_scrollView2 setScrollEnabled:NO];
 }
 

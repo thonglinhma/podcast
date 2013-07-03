@@ -33,7 +33,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _contentView = [[UIView alloc] init];
-        _contentView.backgroundColor = [UIColor lightGrayColor];
+        _contentView.backgroundColor = RGBCOLOR(250, 250, 250);
         
         _scrollView = [[ALUIScrollView alloc] init];
         _scrollView.delegate = self;
@@ -62,7 +62,7 @@
     NSInteger pageWidth = CGRectGetWidth(bounds) + PULL_THRESHOLD;
     _scrollView.frame = CGRectMake(0, 0, pageWidth, CGRectGetHeight(bounds));
     _scrollView.contentSize = CGSizeMake(pageWidth * 2, CGRectGetHeight(bounds));
-    _contentView.frame = [_scrollView convertRect:CGRectMake(15, 0, CGRectGetWidth(bounds) - 2*15, CGRectGetHeight(bounds)) fromView:contentView];
+    _contentView.frame = [_scrollView convertRect:CGRectMake(10, 0, CGRectGetWidth(bounds) - 2*10, CGRectGetHeight(bounds)) fromView:contentView];
     _titleLabel.frame = [_contentView convertRect:_contentView.frame fromView:contentView];
 }
 

@@ -16,9 +16,11 @@
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <QuartzCore/QuartzCore.h>
+    #import <CoreData/CoreData.h>
 
     #import "NimbusCore.h"   
     #import "ALStoryboard.h"
     #import "IIViewDeckController.h"
+    #import "ALPodcastStore.h"
 
 #endif

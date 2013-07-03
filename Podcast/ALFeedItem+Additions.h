@@ -1,5 +1,5 @@
 //
-//  ALFeedItem.m
+//  ALFeedItem+Additions.h
 //  Podcast
 //
 //  Created by Mike Tran on 7/3/13.
@@ -7,15 +7,8 @@
 //
 
 #import "ALFeedItem.h"
+#import "DOUAudioStreamer.h"
 
-
-@implementation ALFeedItem
-
-@dynamic link;
-@dynamic title;
-@dynamic desc;
-@dynamic pubDate;
-@dynamic mediaUrl;
-@dynamic mediaType;
+@interface ALFeedItem (Additions) <DOUAudioFile>
 
 @end
