@@ -26,7 +26,6 @@
                 <outlet property="collectionView" destination="pb2-5F-SZG" id="zKs-wF-c9E"/>
                 <outlet property="contentView" destination="SlG-VI-fho" id="8pX-jp-AoL"/>
                 <outlet property="contentView2" destination="mYy-YR-6TF" id="4P2-8U-oEZ"/>
-                <outlet property="descView" destination="sic-21-G0H" id="PiP-hY-fll"/>
                 <outlet property="feedInfoImageView" destination="bw4-wO-Pul" id="tU3-2n-XmM"/>
                 <outlet property="feedInfoTitleLabel" destination="j6J-rQ-4zS" id="iEo-c6-oOn"/>
                 <outlet property="labelDuration" destination="siR-gC-9cS" id="3t5-yt-bAq"/>
@@ -36,6 +35,7 @@
                 <outlet property="scrollView2" destination="BYp-Xb-HGK" id="oFX-Wc-ieU"/>
                 <outlet property="sliderProgress" destination="wcp-b1-Mje" id="lLu-zS-ys0"/>
                 <outlet property="totalFeedItemsLabel" destination="otX-9C-kwO" id="S2y-5p-m1V"/>
+                <outlet property="webView" destination="sic-21-G0H" id="e6F-lL-Zn5"/>
             </connections>
         </view>
         <view contentMode="scaleToFill" id="SlG-VI-fho">
@@ -43,34 +43,34 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-KH-aeI">
-                    <rect key="frame" x="10" y="10" width="300" height="120"/>
+                    <rect key="frame" x="10" y="0.0" width="300" height="130"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-b1-Mje">
-                            <rect key="frame" x="70" y="3" width="150" height="29"/>
+                            <rect key="frame" x="75" y="8" width="150" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
                                 <action selector="actionSliderProgress:" destination="bo1-B8-jCn" eventType="valueChanged" id="Iyj-3C-scD"/>
                             </connections>
                         </slider>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--|--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaP-lI-AiL">
-                            <rect key="frame" x="-1" y="10" width="65" height="21"/>
+                            <rect key="frame" x="5" y="15" width="65" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--|--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siR-gC-9cS">
-                            <rect key="frame" x="215" y="10" width="65" height="21"/>
+                            <rect key="frame" x="229" y="15" width="65" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74Y-o6-aZF">
-                            <rect key="frame" x="15" y="70" width="73" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74Y-o6-aZF">
+                            <rect key="frame" x="35" y="77" width="64" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Prevous">
+                            <state key="normal" backgroundImage="rewind">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -78,12 +78,12 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqV-X0-Ggr">
-                            <rect key="frame" x="109" y="70" width="73" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqV-X0-Ggr">
+                            <rect key="frame" x="113" y="77" width="64" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Play">
+                            <state key="normal" backgroundImage="play">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -94,12 +94,12 @@
                                 <action selector="actionPlayPause:" destination="bo1-B8-jCn" eventType="touchUpInside" id="kfF-HX-hWO"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-Mc-pws">
-                            <rect key="frame" x="211" y="70" width="73" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-Mc-pws">
+                            <rect key="frame" x="191" y="77" width="64" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Next">
+                            <state key="normal" backgroundImage="forward">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -111,7 +111,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--|--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgt-2g-gs3">
-                            <rect key="frame" x="10" y="39" width="270" height="21"/>
+                            <rect key="frame" x="10" y="47" width="270" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -131,7 +131,7 @@
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--|--" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="j6J-rQ-4zS">
                             <rect key="frame" x="80" y="4" width="207" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -197,34 +197,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <classes>
-        <class className="ALPodcastPlayerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ALPodcastPlayerView.h"/>
-            <relationships>
-                <relationship kind="action" name="actionNext:"/>
-                <relationship kind="action" name="actionPlayPause:"/>
-                <relationship kind="action" name="actionSliderProgress:"/>
-                <relationship kind="outlet" name="buttonPlayPause" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="contentView2" candidateClass="UIView"/>
-                <relationship kind="outlet" name="descView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="feedInfoImageView" candidateClass="NINetworkImageView"/>
-                <relationship kind="outlet" name="feedInfoTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDuration" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimePlayed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollView2" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sliderProgress" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="totalFeedItemsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NINetworkImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NINetworkImageView.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="forward" width="64" height="64"/>
+        <image name="play" width="64" height="64"/>
+        <image name="rewind" width="64" height="64"/>
+    </resources>
 </document>

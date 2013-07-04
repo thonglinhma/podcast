@@ -18,7 +18,7 @@
     if (self)
     {
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.itemSize = (CGSize){320, 70};
+        self.itemSize = (CGSize){320, 75};
     }
     return self;
 }

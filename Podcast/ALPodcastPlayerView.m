@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Ogilvy & Mather (s) Pte Ltd. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
+
 #import "ALPodcastPlayerView.h"
 #import "ALPodcastItemCell.h"
 #import "AFNetworkActivityIndicatorManager.h"
@@ -36,7 +38,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UILabel  *labelTimePlayed;
 @property (nonatomic, weak) IBOutlet UILabel  *labelDuration;
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
-@property (nonatomic, weak) IBOutlet UIWebView *descView;
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) IBOutlet UILabel *totalFeedItemsLabel;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
@@ -195,7 +197,15 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     ALFeedItem *feedItem = _feedItems[_currentIndex];
     
     _labelTitle.text = feedItem.title;
-    [_descView loadHTMLString:feedItem.desc baseURL:nil];
+    [_webView loadHTMLString:feedItem.desc baseURL:nil];
+    
+    NSMutableDictionary *nowPlayingInfo = [[NSMutableDictionary alloc] init];
+    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_feedInfo.imageUrl]]]];
+    
+    [nowPlayingInfo setObject:feedItem.title forKey:MPMediaItemPropertyTitle];
+    [nowPlayingInfo setObject:_feedInfo.copyright forKey:MPMediaItemPropertyAlbumArtist];
+    [nowPlayingInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlayingInfo];
     
     _audioStreamer = [DOUAudioStreamer streamerWithAudioFile:feedItem];
     [_audioStreamer addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusKVOKey];
@@ -209,15 +219,13 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 {
     switch ([_audioStreamer status]) {
         case DOUAudioStreamerPlaying:
-            [_buttonPlayPause setTitle:@"Pause" forState:UIControlStateNormal];
+            [_buttonPlayPause setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerPaused:
-            [_buttonPlayPause setTitle:@"Play" forState:UIControlStateNormal];
-            break;
-            
         case DOUAudioStreamerIdle:
-            [_buttonPlayPause setTitle:@"Play" forState:UIControlStateNormal];
+        case DOUAudioStreamerError:
+            [_buttonPlayPause  setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
             break;
             
         case DOUAudioStreamerFinished:
@@ -226,10 +234,6 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
             
         case DOUAudioStreamerBuffering:
             NIDPRINT(@"Buffering");
-            break;
-            
-        case DOUAudioStreamerError:
-            NIDPRINT(@"Error");
             break;
     }
 }
@@ -428,7 +432,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
-    [_descView loadHTMLString:cell.feedItem.desc baseURL:nil];
+    [_webView loadHTMLString:cell.feedItem.desc baseURL:nil];
     [_scrollView2 setScrollEnabled:NO];
 }
 
@@ -446,9 +450,8 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",
-                          117];
-    [webView stringByEvaluatingJavaScriptFromString:jsString];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.fontSize = '17px'"];
+    [webView stringByEvaluatingJavaScriptFromString: @"document.body.style.fontFamily = 'Helvetica Neue'"];
 }
 
 @end

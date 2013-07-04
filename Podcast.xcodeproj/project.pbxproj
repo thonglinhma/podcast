@@ -78,6 +78,7 @@
 		B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D1610B177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m */; };
 		B9D9E37C1782C0150099F5A8 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */; };
 		B9D9E37D1782C0150099F5A8 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */; };
+		B9DD25EF17851CEA0044F07C /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD25EE17851CEA0044F07C /* NSString+Additions.m */; };
 		DB0132461780777E008445B2 /* ALUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0132451780777E008445B2 /* ALUIScrollView.m */; };
 		DB013249178081F0008445B2 /* ALPodcastPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB013248178081F0008445B2 /* ALPodcastPlayer.m */; };
 		DB01324C17809AA3008445B2 /* ALSendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01324B17809AA3008445B2 /* ALSendFeedbackViewController.m */; };
@@ -255,6 +256,8 @@
 		B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		B9D9E37A1782C0150099F5A8 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		B9DD25ED17851CEA0044F07C /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B9DD25EE17851CEA0044F07C /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		DB0132441780777E008445B2 /* ALUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALUIScrollView.h; sourceTree = "<group>"; };
 		DB0132451780777E008445B2 /* ALUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALUIScrollView.m; sourceTree = "<group>"; };
 		DB013247178081F0008445B2 /* ALPodcastPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastPlayer.h; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 				B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */,
 				B9D9E37A1782C0150099F5A8 /* UIImage+Additions.h */,
 				B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */,
+				B9DD25ED17851CEA0044F07C /* NSString+Additions.h */,
+				B9DD25EE17851CEA0044F07C /* NSString+Additions.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -854,6 +859,7 @@
 				B9D160AF177C10D900FE0061 /* NIInvocationMethods.m in Sources */,
 				B9D1610D177C362A00FE0061 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				B9D160C1177C10EF00FE0061 /* NIImageProcessing.m in Sources */,
+				B9DD25EF17851CEA0044F07C /* NSString+Additions.m in Sources */,
 				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
 				DB208275177E8B5C001DC559 /* DOUAudioSpatialAnalyzer.m in Sources */,
 				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
