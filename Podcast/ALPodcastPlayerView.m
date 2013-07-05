@@ -97,9 +97,6 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     
     [self updateFeedInfoUI];
     
-    [_scrollView addPullToRefreshWithActionHandler:^{
-                                                     }];
-    
     __weak ALPodcastPlayerView *weakSelf = self;
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
