@@ -16,7 +16,6 @@
 @interface ALPodcastItemCell()<UIScrollViewDelegate>
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subtitleLabel;
-@property (nonatomic, strong) UIButton *downloadButton;
 
 - (void)scrollingEnded;
 @end
@@ -24,7 +23,6 @@
 @implementation ALPodcastItemCell {
     ALUIScrollView *_scrollView;
     UIView *_contentView;
-    UIView *_contentView2;
     
     BOOL _pulling;
 }
@@ -39,22 +37,12 @@
         _contentView = [[UIView alloc] init];
         _contentView.backgroundColor = RGBCOLOR(250, 250, 250);
         
-        _contentView2 = [[UIView alloc] init];
-        _contentView2.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:_contentView2];
-        
-        self.downloadButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _downloadButton.backgroundColor = [UIColor blueColor];
-        [_downloadButton setTitle:@"Download" forState:UIControlStateNormal];
-        [_contentView2 addSubview:_downloadButton];
-        
         
         _scrollView = [[ALUIScrollView alloc] init];
-        _scrollView.backgroundColor = [UIColor blueColor];
+        _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.contentInset = UIEdgeInsetsMake(0, 85, 0, 0);
         
         [self.contentView addSubview:_scrollView];
         [_scrollView addSubview:_contentView];
@@ -88,12 +76,10 @@
     
     NSInteger pageWidth = CGRectGetWidth(bounds) + PULL_THRESHOLD;
     
-    _contentView2.frame = bounds;
-    _downloadButton.frame = CGRectMake(15, 0, 80, CGRectGetHeight(_contentView2.bounds));
     
     _scrollView.frame = CGRectMake(0, 0, pageWidth, CGRectGetHeight(bounds));
     _scrollView.contentSize = CGSizeMake(pageWidth * 2, CGRectGetHeight(bounds));
-    _contentView.frame = [_scrollView convertRect:CGRectMake(10, 0, CGRectGetWidth(bounds) - 2*10, CGRectGetHeight(bounds)) fromView:contentView];
+    _contentView.frame = [_scrollView convertRect:CGRectMake(5, 0, CGRectGetWidth(bounds) - 2*5, CGRectGetHeight(bounds)) fromView:contentView];
     CGFloat y = 5;
     
     _titleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 20) fromView:contentView];
@@ -122,8 +108,6 @@
 {
     
     CGFloat offset = scrollView.contentOffset.x;
-    
-    NIDPRINT(@"Offset: %f", offset);
     
     if (offset > PULL_THRESHOLD && !_pulling) {
         [_delegate podcastItemCellDidBeginPulling:self];

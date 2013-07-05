@@ -15,6 +15,7 @@
 #import "ALDynamicCollectionViewFlowLayout.h"
 #import "NimbusNetworkImage.h"
 #import "DOUAudioStreamer.h"
+#import "SVPullToRefresh.h"
 #import "ALFeedItem+Additions.h"
 
 #define PULL_THRESHOLD 20
@@ -95,6 +96,9 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     [_collectionView registerClass:[ALPodcastItemCell class] forCellWithReuseIdentifier:kALPodcastItemCellIdentifier];
     
     [self updateFeedInfoUI];
+    
+    [_scrollView addPullToRefreshWithActionHandler:^{
+                                                     }];
     
     __weak ALPodcastPlayerView *weakSelf = self;
     

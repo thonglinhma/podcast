@@ -43,11 +43,11 @@
     
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
     
-    [_scrollView addPullToRefreshWithActionHandler:^{
-        // prepend data to dataSource, insert cells at top of table view
-        // call [tableView.pullToRefreshView stopAnimating] when done
-        //[_scrollView.pullToRefreshView stopAnimating];
-    }];
+//    [_scrollView addPullToRefreshWithActionHandler:^{
+//        // prepend data to dataSource, insert cells at top of table view
+//        // call [tableView.pullToRefreshView stopAnimating] when done
+//        //[_scrollView.pullToRefreshView stopAnimating];
+//    }];
     
     [_buttonItem setAction:@selector(toggleLeftView)];
 }
