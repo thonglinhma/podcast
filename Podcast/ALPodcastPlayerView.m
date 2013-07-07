@@ -40,6 +40,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
 @property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) IBOutlet UILabel *totalFeedItemsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *feedItemTitleLabel;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
 @property (nonatomic, strong) NSArray *feedItems;
@@ -205,6 +206,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     ALFeedItem *feedItem = _feedItems[_currentIndex];
     
     _labelTitle.text = feedItem.title;
+    _feedItemTitleLabel.text = feedItem.title;
     [_webView loadHTMLString:feedItem.desc baseURL:nil];
     
     NSMutableDictionary *nowPlayingInfo = [[NSMutableDictionary alloc] init];
@@ -441,6 +443,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
     [_webView loadHTMLString:cell.feedItem.desc baseURL:nil];
+    _feedItemTitleLabel.text = cell.feedItem.title;
     [_scrollView2 setScrollEnabled:NO];
 }
 
