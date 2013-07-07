@@ -101,7 +101,6 @@
 		DB20827E177E8B70001DC559 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20827C177E8B70001DC559 /* AudioToolbox.framework */; };
 		DB20827F177E8B70001DC559 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB20827D177E8B70001DC559 /* CoreAudio.framework */; };
 		DB364F721789600400190BE0 /* UIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB364F711789600400190BE0 /* UIScrollView+Additions.m */; };
-		DB364F79178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = DB364F76178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.m */; };
 		DB364F7A178964D600190BE0 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DB364F78178964D600190BE0 /* UIScrollView+SVPullToRefresh.m */; };
 		DB5D2A83177FDC6E00DA1DEB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D2A82177FDC6E00DA1DEB /* RXMLElement.m */; };
 		DB5D2A85177FDC9D00DA1DEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A84177FDC9D00DA1DEB /* libz.dylib */; };
@@ -306,8 +305,6 @@
 		DB364F701789600400190BE0 /* UIScrollView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Additions.h"; sourceTree = "<group>"; };
 		DB364F711789600400190BE0 /* UIScrollView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Additions.m"; sourceTree = "<group>"; };
 		DB364F74178964D600190BE0 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
-		DB364F75178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		DB364F76178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		DB364F77178964D600190BE0 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		DB364F78178964D600190BE0 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		DB5D2A81177FDC6E00DA1DEB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXMLElement.h; path = Vendor/RaptureXML/RaptureXML/RXMLElement.h; sourceTree = "<group>"; };
@@ -697,8 +694,6 @@
 			isa = PBXGroup;
 			children = (
 				DB364F74178964D600190BE0 /* SVPullToRefresh.h */,
-				DB364F75178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.h */,
-				DB364F76178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.m */,
 				DB364F77178964D600190BE0 /* UIScrollView+SVPullToRefresh.h */,
 				DB364F78178964D600190BE0 /* UIScrollView+SVPullToRefresh.m */,
 			);
@@ -873,7 +868,6 @@
 				B9DD25EF17851CEA0044F07C /* NSString+Additions.m in Sources */,
 				B9D160D8177C10FF00FE0061 /* AFImageRequestOperation.m in Sources */,
 				DB208275177E8B5C001DC559 /* DOUAudioSpatialAnalyzer.m in Sources */,
-				DB364F79178964D600190BE0 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				B9D160E8177C125900FE0061 /* IIWrapController.m in Sources */,
 				B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */,
 				B94188C41783D33F00C2DCD1 /* ALPodcastStore.m in Sources */,
