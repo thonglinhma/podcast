@@ -11,6 +11,7 @@
 #import "ALPodcastPlayerView.h"
 #import "SVPullToRefresh.h"
 #import "ALLiveBlurView.h"
+#import "UIScrollView+Additions.h"
 
 @interface ALPodcastPlayerViewController () <ALPodcastPlayerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
@@ -73,11 +74,13 @@
 
 - (void)podcastPlayerView:(ALPodcastPlayerView *)view didChangePullOffset:(CGFloat)offset
 {
+    _scrollView.pulling = YES;
     [_scrollView setContentOffset:CGPointMake(0, -offset)];
 }
 
 - (void)podcastPlayerViewDidEndPulling:(ALPodcastPlayerView *)view
 {
+    _scrollView.pulling = NO;
     [_scrollView setScrollEnabled:YES];
 }
 

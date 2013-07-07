@@ -97,65 +97,66 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     
     [self updateFeedInfoUI];
     
-    __weak ALPodcastPlayerView *weakSelf = self;
-    
-    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.eslpod.com/feed.xml"] cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:10];
-    AFRXMLRequestOperation *operation = [AFRXMLRequestOperation RXMLRequestOperationWithRequest:request
-                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, RXMLElement *XMLElement) {
-                                                                                            
-                                                                                            RXMLElement *channel = [XMLElement child:@"channel"];
-                                                                                            
-                                                                                            ALFeedInfo *feedInfo = (ALFeedInfo *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedInfo" predicateWithFormat:@"link = %@" argumentArray:@[ [channel child:@"link"].text ]];
-                                                                                            
-                                                                                            if (feedInfo == nil) {
-                                                                                                feedInfo = [[ALPodcastStore sharedStore] newFeedInfo];
-                                                                                                feedInfo.link = [channel child:@"link"].text;
-                                                                                                feedInfo.title = [channel child:@"title"].text;
-                                                                                                feedInfo.copyright = [channel child:@"copyright"].text;
-                                                                                                feedInfo.imageUrl = [[channel child:@"image"] child:@"url"].text;
-                                                                                                
-                                                                                                weakSelf.feedInfo = feedInfo;
-                                                                                            }
-                                                                                            
-                                                                                            
-                                                                                            [channel iterate:@"item" usingBlock: ^(RXMLElement *el){
-                                                                                                ALFeedItem *feedItem = (ALFeedItem *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedItem" predicateWithFormat:@"link = %@" argumentArray:@[ [el child:@"link"].text ]];
-
-                                                                                                
-                                                                                                if (feedItem == nil) {
-                                                                                                    feedItem = [[ALPodcastStore sharedStore] newFeedItem];
-                                                                                                    
-                                                                                                    feedItem.title = [el child:@"title"].text;
-                                                                                                    feedItem.link = [el child:@"link"].text;
-                                                                                                    feedItem.desc = [el child:@"description"].text;
-                                                                                                    feedItem.mediaUrl = [[el child:@"enclosure"] attribute:@"url"];
-                                                                                                    feedItem.mediaType = [[el child:@"enclosure"] attribute:@"type"];
-                                                                                                    
-                                                                                                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-                                                                                                    
-                                                                                                    NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EN"];
-                                                                                                    [formatter setLocale:local];
-                                                                                                    [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
-                                                                                                    
-                                                                                                    feedItem.pubDate = [formatter dateFromString:[el child:@"pubDate"].text];
-                                                                                                }
- 
-                                                                                            }];
-                                                                                            
-                                                                                            
-                                                                                            [[ALPodcastStore sharedStore] saveChanges];
-                                                                                            
-                                                                                            weakSelf.feedItems =  [[ALPodcastStore sharedStore] reloadFetchFeedItems];
-                                                                                            [weakSelf.dynamicLayout removeAllBehaviors];
-                                                                                            [weakSelf.collectionView reloadData];
-                                                                                            [self updateFeedInfoUI];
-                                                                                        }
-                                                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, RXMLElement *XMLElement){
-                                                                                            NIDPRINT(@"Failure: %@", [error localizedDescription]);
-                                                                                        }];
-    [operation start];
+//    __weak ALPodcastPlayerView *weakSelf = self;
+//    
+//    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+//    
+//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.eslpod.com/feed.xml"]];
+//    AFRXMLRequestOperation *operation = [AFRXMLRequestOperation RXMLRequestOperationWithRequest:request
+//                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, RXMLElement *XMLElement) {
+//                                                                                            
+//                                                                                            RXMLElement *channel = [XMLElement child:@"channel"];
+//                                                                                            
+//                                                                                            ALFeedInfo *feedInfo = (ALFeedInfo *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedInfo" predicateWithFormat:@"link = %@" argumentArray:@[ [channel child:@"link"].text ]];
+//                                                                                            
+//                                                                                            if (feedInfo == nil) {
+//                                                                                                feedInfo = [[ALPodcastStore sharedStore] newFeedInfo];
+//                                                                                                feedInfo.link = [channel child:@"link"].text;
+//                                                                                                feedInfo.title = [channel child:@"title"].text;
+//                                                                                                feedInfo.copyright = [channel child:@"copyright"].text;
+//                                                                                                feedInfo.imageUrl = [[channel child:@"image"] child:@"url"].text;
+//                                                                                                
+//                                                                                                weakSelf.feedInfo = feedInfo;
+//                                                                                            }
+//                                                                                            
+//                                                                                            
+//                                                                                            [channel iterate:@"item" usingBlock: ^(RXMLElement *el){
+//                                                                                                ALFeedItem *feedItem = (ALFeedItem *)[[ALPodcastStore sharedStore] fetchObjectForEntityForName:@"FeedItem" predicateWithFormat:@"link = %@" argumentArray:@[ [el child:@"link"].text ]];
+//                                                                                                
+//                                                                                                if (feedItem == nil) {
+//                                                                                                    feedItem = [[ALPodcastStore sharedStore] newFeedItem];
+//                                                                                                    
+//                                                                                                    feedItem.title = [el child:@"title"].text;
+//                                                                                                    feedItem.link = [el child:@"link"].text;
+//                                                                                                    feedItem.desc = [el child:@"description"].text;
+//                                                                                                    feedItem.mediaUrl = [[el child:@"enclosure"] attribute:@"url"];
+//                                                                                                    feedItem.mediaType = [[el child:@"enclosure"] attribute:@"type"];
+//                                                                                                    
+//                                                                                                    
+//                                                                                                    
+//                                                                                                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//                                                                                                    
+//                                                                                                    NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EN"];
+//                                                                                                    [formatter setLocale:local];
+//                                                                                                    [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
+//                                                                                                    
+//                                                                                                    feedItem.pubDate = [formatter dateFromString:[el child:@"pubDate"].text];
+//                                                                                                }
+// 
+//                                                                                            }];
+//                                                                                            
+//                                                                                            
+//                                                                                            [[ALPodcastStore sharedStore] saveChanges];
+//                                                                                            
+//                                                                                            weakSelf.feedItems =  [[ALPodcastStore sharedStore] reloadFetchFeedItems];
+//                                                                                            [weakSelf.dynamicLayout removeAllBehaviors];
+//                                                                                            [weakSelf.collectionView reloadData];
+//                                                                                            [self updateFeedInfoUI];
+//                                                                                        }
+//                                                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, RXMLElement *XMLElement){
+//                                                                                            NIDPRINT(@"Failure: %@", [error localizedDescription]);
+//                                                                                        }];
+//    [operation start];
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     
