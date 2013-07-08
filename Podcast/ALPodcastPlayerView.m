@@ -477,6 +477,7 @@ static NSString *const kALPodcastItemDetailCellIdentifier = @"ALPodcastItemDetai
 {
     [_webView loadHTMLString:cell.feedItem.desc baseURL:nil];
     [_scrollView2 setScrollEnabled:NO];
+    [_tableView reloadData];
 }
 
 - (void)podcastItemCell:(ALPodcastItemCell *)cell didChangePullOffset:(CGFloat)offset

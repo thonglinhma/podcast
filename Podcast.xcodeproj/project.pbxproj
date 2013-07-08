@@ -107,6 +107,7 @@
 		DB5D2A85177FDC9D00DA1DEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A84177FDC9D00DA1DEB /* libz.dylib */; };
 		DB5D2A87177FDCA800DA1DEB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */; };
 		DB5D2A8B177FDE4C00DA1DEB /* AFRXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D2A8A177FDE4C00DA1DEB /* AFRXMLRequestOperation.m */; };
+		DB7485F0178AE15E005DF321 /* RMSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7485EF178AE15E005DF321 /* RMSwipeTableViewCell.m */; };
 		DBA6C578178181290063F7B3 /* Podcast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */; };
 		DBCCA47B17812B5600D0A09B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCA47A17812B5600D0A09B /* Accelerate.framework */; };
 /* End PBXBuildFile section */
@@ -316,6 +317,8 @@
 		DB5D2A86177FDCA800DA1DEB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		DB5D2A89177FDE4C00DA1DEB /* AFRXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRXMLRequestOperation.h; sourceTree = "<group>"; };
 		DB5D2A8A177FDE4C00DA1DEB /* AFRXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFRXMLRequestOperation.m; sourceTree = "<group>"; };
+		DB7485EE178AE15E005DF321 /* RMSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSwipeTableViewCell.h; sourceTree = "<group>"; };
+		DB7485EF178AE15E005DF321 /* RMSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSwipeTableViewCell.m; sourceTree = "<group>"; };
 		DBA6C577178181290063F7B3 /* Podcast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Podcast.xcdatamodel; sourceTree = "<group>"; };
 		DBCCA47A17812B5600D0A09B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -443,6 +446,7 @@
 		B9D16064177C0FC300FE0061 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				DB7485ED178AE15E005DF321 /* RMSwipeTableViewCell */,
 				DB364F73178964D600190BE0 /* SVPullToRefresh */,
 				DB5D2A80177FDC5D00DA1DEB /* RaptureXML */,
 				DB208244177E8B4A001DC559 /* DOUAudioStreamer */,
@@ -724,6 +728,16 @@
 			name = "AFNetworking Extensions";
 			sourceTree = "<group>";
 		};
+		DB7485ED178AE15E005DF321 /* RMSwipeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB7485EE178AE15E005DF321 /* RMSwipeTableViewCell.h */,
+				DB7485EF178AE15E005DF321 /* RMSwipeTableViewCell.m */,
+			);
+			name = RMSwipeTableViewCell;
+			path = Vendor/RMSwipeTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -906,6 +920,7 @@
 				DB5D2A8B177FDE4C00DA1DEB /* AFRXMLRequestOperation.m in Sources */,
 				B9E6FB61178A929000E4E1C9 /* ALPodcastItemDetailCell.m in Sources */,
 				B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */,
+				DB7485F0178AE15E005DF321 /* RMSwipeTableViewCell.m in Sources */,
 				B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */,
 				B94188D01783D75200C2DCD1 /* ALFeedItem+Additions.m in Sources */,
 				DB0132461780777E008445B2 /* ALUIScrollView.m in Sources */,

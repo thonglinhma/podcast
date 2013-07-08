@@ -7,27 +7,20 @@
 //
 
 #import "ALPodcastItemDetailCell.h"
+#import "UIImage+Additions.h"
 
-static CGFloat const kMCStop1 = 0.20; // Percentage limit to trigger the first action
-static CGFloat const kMCStop2 = 0.75; // Percentage limit to trigger the second action
-static CGFloat const kMCBounceAmplitude = 20.0; // Maximum bounce amplitude when using the MCSwipeTableViewCellModeSwitch mode
-static NSTimeInterval const kMCBounceDuration1 = 0.2; // Duration of the first part of the bounce animation
-static NSTimeInterval const kMCBounceDuration2 = 0.1; // Duration of the second part of the bounce animation
-static NSTimeInterval const kMCDurationLowLimit = 0.25; // Lowest duration when swipping the cell because we try to simulate velocity
-static NSTimeInterval const kMCDurationHightLimit = 0.1; // Highest duration when swipping the cell because we try to simulate velocity
+#define BUTTON_THRESHOLD 80
 
+@interface ALPodcastItemDetailCell()
+@property (nonatomic, readonly, strong) UIButton *deleteButton;
+@property (nonatomic, readonly, strong) UIButton *moreButton;
 
-@interface ALPodcastItemDetailCell() <UIGestureRecognizerDelegate>
 - (void)initializer;
 @end
 
-@implementation ALPodcastItemDetailCell {
-    
-    UIPanGestureRecognizer *_panGestureRecognizer;
-    
-    BOOL _isDragging;
-    BOOL _shouldDrag;
-}
+@implementation ALPodcastItemDetailCell
+@synthesize deleteButton = _deleteButton;
+@synthesize moreButton = _moreButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -61,115 +54,94 @@ static NSTimeInterval const kMCDurationHightLimit = 0.1; // Highest duration whe
     return self;
 }
 
+#pragma mark - Private properties
+
+- (UIButton*)deleteButton
+{
+    if (!_deleteButton) {
+        _deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_deleteButton setBackgroundImage:[UIImage buttonImageWithColor:[UIColor redColor] cornerRadius:0 shadowColor:[UIColor clearColor] shadowInsets:UIEdgeInsetsZero] forState:UIControlStateNormal];
+        [_deleteButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
+        [_deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_deleteButton setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateNormal];
+        [_deleteButton setFrame:CGRectMake(CGRectGetMaxX(self.frame) - BUTTON_THRESHOLD, 0, BUTTON_THRESHOLD, CGRectGetHeight(self.contentView.frame))];
+        [_deleteButton addTarget:self action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
+        [_deleteButton setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    }
+    return _deleteButton;
+}
+
+- (UIButton *)moreButton
+{
+    if (!_moreButton) {
+        _moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_moreButton setBackgroundImage:[UIImage buttonImageWithColor:[UIColor lightGrayColor] cornerRadius:0 shadowColor:[UIColor clearColor] shadowInsets:UIEdgeInsetsZero] forState:UIControlStateNormal];
+        [_moreButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
+        [_moreButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_moreButton setTitle:NSLocalizedString(@"More", nil) forState:UIControlStateNormal];
+        [_moreButton setFrame:CGRectMake(CGRectGetMaxX(self.frame) - 2*BUTTON_THRESHOLD, 0, BUTTON_THRESHOLD, CGRectGetHeight(self.contentView.frame))];
+        [_moreButton addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
+        [_moreButton setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    }
+    return _moreButton;
+}
+
 
 #pragma mark - Private methods
 
 - (void)initializer
 {
-    self.backgroundColor = [UIColor redColor];
+    self.backViewbackgroundColor = [UIColor whiteColor];
+    self.detailTextLabel.numberOfLines = 2;
+    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
+    self.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+    self.revealDirection = RMSwipeTableViewCellRevealDirectionRight;
+    self.animationType = RMSwipeTableViewCellAnimationTypeEaseOut;
+    self.panElasticityStartingPoint = 2*BUTTON_THRESHOLD;
     
-    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
-    [self addGestureRecognizer:_panGestureRecognizer];
-    [_panGestureRecognizer setDelegate:self];
-    
-    _isDragging = NO;
-    
-    // By default the cells are draggable
-    _shouldDrag = YES;
 }
 
-- (CGFloat)offsetWithPercentage:(CGFloat)percentage relativeToWidth:(CGFloat)width
+- (void)cleanupBackView
 {
-    CGFloat offset = percentage * width;
-    
-    if (offset < -width) offset = -width;
-    else if (offset > width) offset = width;
-    
-    return offset;
+    [super cleanupBackView];
+    [_deleteButton removeFromSuperview];
+    [_moreButton removeFromSuperview];
+    _deleteButton = nil;
+    _moreButton = nil;
 }
 
-- (CGFloat)percentageWithOffset:(CGFloat)offset relativeToWidth:(CGFloat)width
+
+-(void)deleteAction
 {
-    CGFloat percentage = offset / width;
-    
-    if (percentage < -1.0) percentage = -1.0;
-    else if (percentage > 1.0) percentage = 1.0;
-    
-    return percentage;
 }
 
-- (NSTimeInterval)animationDurationWithVelocity:(CGPoint)velocity
+- (void)moreAction
 {
-    CGFloat width = CGRectGetWidth(self.bounds);
-    NSTimeInterval animationDurationDiff = kMCDurationHightLimit - kMCDurationLowLimit;
-    CGFloat horizontalVelocity = velocity.x;
     
-    if (horizontalVelocity < -width) horizontalVelocity = -width;
-    else if (horizontalVelocity > width) horizontalVelocity = width;
-    
-    return (kMCDurationHightLimit + kMCDurationLowLimit) - fabs(((horizontalVelocity / width) * animationDurationDiff));
 }
 
-- (void)animateWithOffset:(CGFloat)offset {
-}
+#pragma mark - 
 
-
-#pragma mark - UITableViewCell
-
-- (void)prepareForReuse {
-    [super prepareForReuse];
-    
-    // clearing the dragging flag
-    _isDragging = NO;
-    
-    // Before reuse we need to reset it's state
-    _shouldDrag = YES;
-}
-
-- (void)layoutSubviews
+- (void)didStartSwiping
 {
-    [super layoutSubviews];
+    [super didStartSwiping];
+    [self.backView addSubview:self.deleteButton];
+    [self.backView addSubview:self.moreButton];
 }
 
-#pragma mark - Handle Gestures
 
-- (void)handlePanGestureRecognizer:(UIPanGestureRecognizer *)gesture
+#pragma mark - 
+
+- (void)resetContentView
 {
-    // The user do not want you to be dragged!
-    //if (!_shouldDrag) return;
-    
-    UIGestureRecognizerState state = [gesture state];
-    CGPoint translation = [gesture translationInView:self];
-    CGPoint velocity = [gesture velocityInView:self];
-    
-    CGFloat percentage = [self percentageWithOffset:CGRectGetMinX(self.contentView.frame) relativeToWidth:CGRectGetWidth(self.bounds)];
-    NSTimeInterval animationDuration = [self animationDurationWithVelocity:velocity];
-    
-    if (state == UIGestureRecognizerStateBegan || state == UIGestureRecognizerStateChanged) {
-        _isDragging = YES;
-        
-        CGPoint center = {self.contentView.center.x + translation.x, self.contentView.center.y};
-        [self.contentView setCenter:center];
-        //[self animateWithOffset:CGRectGetMinX(self.contentView.frame)];
-        [gesture setTranslation:CGPointZero inView:self];
-    } if (state == UIGestureRecognizerStateEnded || state == UIGestureRecognizerStateCancelled) {
-        _isDragging = NO;
-    }
-
-}
-
-#pragma mark - UIGestureRecognizerDelegate
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    if ([gestureRecognizer class] == [UIPanGestureRecognizer class]) {
-        UIPanGestureRecognizer *g = (UIPanGestureRecognizer *)gestureRecognizer;
-        CGPoint point = [g velocityInView:self];
-        if (fabsf(point.x) > fabsf(point.y) ) {
-            return YES;
-        }
-    }
-    return NO;
+    [UIView animateWithDuration:0.15f
+                     animations:^{
+                         self.contentView.frame = CGRectOffset(self.contentView.bounds, 0, 0);
+                     }
+                     completion:^(BOOL finished) {
+                         self.shouldAnimateCellReset = YES;
+                         [self cleanupBackView];
+                     }];
 }
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMSwipeTableViewCell.h"
 
-@interface ALPodcastItemDetailCell : UITableViewCell
+@interface ALPodcastItemDetailCell : RMSwipeTableViewCell
 
 @end
