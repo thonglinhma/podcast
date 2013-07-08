@@ -17,6 +17,8 @@
 #import "DOUAudioStreamer.h"
 #import "SVPullToRefresh.h"
 #import "ALFeedItem+Additions.h"
+#import "UIImage+Additions.h"
+#import "ALPodcastItemDetailCell.h"
 
 #define PULL_THRESHOLD 20
 #define kALDefaultContentOffset 50
@@ -24,13 +26,15 @@
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
 static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
+static NSString *const kALPodcastItemDetailCellIdentifier = @"ALPodcastItemDetailCell";
 
-@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIWebViewDelegate, ALPodcastItemCellDelegate>
+@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UIWebViewDelegate, ALPodcastItemCellDelegate>
 @property (nonatomic, readwrite, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView2;
 @property (nonatomic, weak) IBOutlet UIView *contentView2;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet NINetworkImageView *feedInfoImageView;
 @property (nonatomic, weak) IBOutlet UILabel *feedInfoTitleLabel;
 @property (nonatomic, weak) IBOutlet UISlider *sliderProgress;
@@ -40,7 +44,6 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
 @property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) IBOutlet UILabel *totalFeedItemsLabel;
-@property (nonatomic, weak) IBOutlet UILabel *feedItemTitleLabel;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
 @property (nonatomic, strong) NSArray *feedItems;
@@ -82,6 +85,13 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     self.feedItems = [[ALPodcastStore sharedStore] fetchFeedItems];
     self.feedInfo = [[ALPodcastStore sharedStore] fetchFeedInfo];
     
+    
+//    UIImage *normalSliderImage = [UIImage circularImageWithColor:[UIColor whiteColor] size:CGSizeMake(24, 24)];
+//    [_sliderProgress setThumbImage:normalSliderImage forState:UIControlStateNormal];
+//    
+//    UIImage *highlighedSliderImage = [UIImage circularImageWithColor:[UIColor whiteColor] size:CGSizeMake(24, 24)];
+//    [_sliderProgress setThumbImage:highlighedSliderImage forState:UIControlStateHighlighted];
+    
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds));
@@ -94,6 +104,8 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     [_collectionView setCollectionViewLayout:dynamicLayout];
     self.dynamicLayout = dynamicLayout;
     [_collectionView registerClass:[ALPodcastItemCell class] forCellWithReuseIdentifier:kALPodcastItemCellIdentifier];
+    
+    [_tableView registerClass:[ALPodcastItemDetailCell class] forCellReuseIdentifier:kALPodcastItemDetailCellIdentifier];
     
     [self updateFeedInfoUI];
     
@@ -159,8 +171,16 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
                                                                                                     [weakSelf.scrollView.pullToRefreshView stopAnimating];
                                                                                                 });
                                                                                             }
-                                                                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, RXMLElement *XMLElement){
+                                                                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, RXMLElement *XMLElement) {
                                                                                                 NIDPRINT(@"Failure: %@", [error localizedDescription]);
+                                                                                                int64_t delayInSeconds = 1.0;
+                                                                                                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                                                                                                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                                                                                    [weakSelf.scrollView.pullToRefreshView stopAnimating];
+                                                                                                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cannot Get Podcast" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                                                                                    [alertView show];
+                                                                                                });
+                                                                                            
                                                                                             }];
         [operation start];
     }];
@@ -206,7 +226,6 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     ALFeedItem *feedItem = _feedItems[_currentIndex];
     
     _labelTitle.text = feedItem.title;
-    _feedItemTitleLabel.text = feedItem.title;
     [_webView loadHTMLString:feedItem.desc baseURL:nil];
     
     NSMutableDictionary *nowPlayingInfo = [[NSMutableDictionary alloc] init];
@@ -438,12 +457,25 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     [self resetAudioStreamer];
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ALPodcastItemDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kALPodcastItemDetailCellIdentifier forIndexPath:indexPath];
+    
+    return cell;
+}
+
 #pragma mark - ALPodcastItemCellDelegate
 
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
     [_webView loadHTMLString:cell.feedItem.desc baseURL:nil];
-    _feedItemTitleLabel.text = cell.feedItem.title;
     [_scrollView2 setScrollEnabled:NO];
 }
 

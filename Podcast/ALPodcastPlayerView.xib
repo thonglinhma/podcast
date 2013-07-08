@@ -20,7 +20,7 @@
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="buttonPlayPause" destination="SqV-X0-Ggr" id="sae-9t-gf8"/>
                 <outlet property="collectionView" destination="pb2-5F-SZG" id="zKs-wF-c9E"/>
@@ -28,13 +28,13 @@
                 <outlet property="contentView2" destination="mYy-YR-6TF" id="4P2-8U-oEZ"/>
                 <outlet property="feedInfoImageView" destination="bw4-wO-Pul" id="tU3-2n-XmM"/>
                 <outlet property="feedInfoTitleLabel" destination="j6J-rQ-4zS" id="iEo-c6-oOn"/>
-                <outlet property="feedItemTitleLabel" destination="EOD-BE-CeY" id="ype-q9-pFO"/>
                 <outlet property="labelDuration" destination="siR-gC-9cS" id="3t5-yt-bAq"/>
                 <outlet property="labelTimePlayed" destination="UaP-lI-AiL" id="7ro-UX-clK"/>
                 <outlet property="labelTitle" destination="Pgt-2g-gs3" id="3EG-CC-rva"/>
                 <outlet property="scrollView" destination="3dh-Vt-7OG" id="pfi-PO-te5"/>
                 <outlet property="scrollView2" destination="BYp-Xb-HGK" id="oFX-Wc-ieU"/>
                 <outlet property="sliderProgress" destination="wcp-b1-Mje" id="lLu-zS-ys0"/>
+                <outlet property="tableView" destination="7gZ-Ap-U4Z" id="mPr-BI-xfN"/>
                 <outlet property="totalFeedItemsLabel" destination="otX-9C-kwO" id="S2y-5p-m1V"/>
                 <outlet property="webView" destination="sic-21-G0H" id="e6F-lL-Zn5"/>
             </connections>
@@ -186,77 +186,21 @@
                     </connections>
                 </collectionView>
                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sic-21-G0H">
-                    <rect key="frame" x="325" y="210" width="310" height="358"/>
+                    <rect key="frame" x="325" y="128" width="310" height="440"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="delegate" destination="bo1-B8-jCn" id="h5R-fc-GOE"/>
                     </connections>
                 </webView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6t-fU-0Kj">
-                    <rect key="frame" x="325" y="0.0" width="310" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--:--" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="EOD-BE-CeY">
-                            <rect key="frame" x="15" y="0.0" width="290" height="42"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn3-Fa-esy">
-                            <rect key="frame" x="5" y="105" width="300" height="25"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Mask as unplayed">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXA-51-poi">
-                            <rect key="frame" x="5" y="136" width="300" height="25"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Add to On-The-Go">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSH-AZ-Vbf">
-                            <rect key="frame" x="5" y="167" width="300" height="25"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Remove donwload">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Added 7 Jul, 2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-ct-bs5">
-                            <rect key="frame" x="15" y="47" width="290" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="28.6 MB (Audio)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-zM-UCU">
-                            <rect key="frame" x="15" y="76" width="290" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-Ap-U4Z">
+                    <rect key="frame" x="325" y="0.0" width="310" height="120"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="bo1-B8-jCn" id="0Q5-O2-ElJ"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -267,35 +211,4 @@
         <image name="play" width="64" height="64"/>
         <image name="rewind" width="64" height="64"/>
     </resources>
-    <classes>
-        <class className="ALPodcastPlayerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ALPodcastPlayerView.h"/>
-            <relationships>
-                <relationship kind="action" name="actionNext:"/>
-                <relationship kind="action" name="actionPlayPause:"/>
-                <relationship kind="action" name="actionSliderProgress:"/>
-                <relationship kind="outlet" name="buttonPlayPause" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="contentView2" candidateClass="UIView"/>
-                <relationship kind="outlet" name="feedInfoImageView" candidateClass="NINetworkImageView"/>
-                <relationship kind="outlet" name="feedInfoTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="feedItemTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDuration" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTimePlayed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollView2" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sliderProgress" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="totalFeedItemsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NINetworkImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NINetworkImageView.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
 </document>

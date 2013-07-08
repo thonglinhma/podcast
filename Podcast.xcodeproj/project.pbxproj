@@ -78,6 +78,7 @@
 		B9D9E37C1782C0150099F5A8 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E3791782C0150099F5A8 /* UIColor+Additions.m */; };
 		B9D9E37D1782C0150099F5A8 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */; };
 		B9DD25EF17851CEA0044F07C /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD25EE17851CEA0044F07C /* NSString+Additions.m */; };
+		B9E6FB61178A929000E4E1C9 /* ALPodcastItemDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E6FB60178A929000E4E1C9 /* ALPodcastItemDetailCell.m */; };
 		DB0132461780777E008445B2 /* ALUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0132451780777E008445B2 /* ALUIScrollView.m */; };
 		DB013249178081F0008445B2 /* ALPodcastPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB013248178081F0008445B2 /* ALPodcastPlayer.m */; };
 		DB01324C17809AA3008445B2 /* ALSendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01324B17809AA3008445B2 /* ALSendFeedbackViewController.m */; };
@@ -256,6 +257,8 @@
 		B9D9E37B1782C0150099F5A8 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		B9DD25ED17851CEA0044F07C /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		B9DD25EE17851CEA0044F07C /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B9E6FB5F178A929000E4E1C9 /* ALPodcastItemDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastItemDetailCell.h; sourceTree = "<group>"; };
+		B9E6FB60178A929000E4E1C9 /* ALPodcastItemDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastItemDetailCell.m; sourceTree = "<group>"; };
 		DB0132441780777E008445B2 /* ALUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALUIScrollView.h; sourceTree = "<group>"; };
 		DB0132451780777E008445B2 /* ALUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALUIScrollView.m; sourceTree = "<group>"; };
 		DB013247178081F0008445B2 /* ALPodcastPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastPlayer.h; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 				B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */,
 				DB0132441780777E008445B2 /* ALUIScrollView.h */,
 				DB0132451780777E008445B2 /* ALUIScrollView.m */,
+				B9E6FB5F178A929000E4E1C9 /* ALPodcastItemDetailCell.h */,
+				B9E6FB60178A929000E4E1C9 /* ALPodcastItemDetailCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -899,6 +904,7 @@
 				B9D160B9177C10D900FE0061 /* NIState.m in Sources */,
 				B9D160EB177C12A500FE0061 /* ALMenuViewController.m in Sources */,
 				DB5D2A8B177FDE4C00DA1DEB /* AFRXMLRequestOperation.m in Sources */,
+				B9E6FB61178A929000E4E1C9 /* ALPodcastItemDetailCell.m in Sources */,
 				B9D160AA177C10D900FE0061 /* NIDeviceOrientation.m in Sources */,
 				B9D160B7177C10D900FE0061 /* NISDKAvailability.m in Sources */,
 				B94188D01783D75200C2DCD1 /* ALFeedItem+Additions.m in Sources */,
