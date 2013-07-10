@@ -18,7 +18,6 @@
 #import "SVPullToRefresh.h"
 #import "ALFeedItem+Additions.h"
 #import "UIImage+Additions.h"
-#import "ALPodcastItemDetailCell.h"
 
 #define PULL_THRESHOLD 20
 #define kALDefaultContentOffset 50
@@ -26,15 +25,13 @@
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
 static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
-static NSString *const kALPodcastItemDetailCellIdentifier = @"ALPodcastItemDetailCell";
 
-@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UIWebViewDelegate, ALPodcastItemCellDelegate>
+@interface ALPodcastPlayerView() <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, ALPodcastItemCellDelegate>
 @property (nonatomic, readwrite, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView2;
 @property (nonatomic, weak) IBOutlet UIView *contentView2;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet NINetworkImageView *feedInfoImageView;
 @property (nonatomic, weak) IBOutlet UILabel *feedInfoTitleLabel;
 @property (nonatomic, weak) IBOutlet UISlider *sliderProgress;
@@ -104,8 +101,6 @@ static NSString *const kALPodcastItemDetailCellIdentifier = @"ALPodcastItemDetai
     [_collectionView setCollectionViewLayout:dynamicLayout];
     self.dynamicLayout = dynamicLayout;
     [_collectionView registerClass:[ALPodcastItemCell class] forCellWithReuseIdentifier:kALPodcastItemCellIdentifier];
-    
-    [_tableView registerClass:[ALPodcastItemDetailCell class] forCellReuseIdentifier:kALPodcastItemDetailCellIdentifier];
     
     [self updateFeedInfoUI];
     
@@ -457,27 +452,12 @@ static NSString *const kALPodcastItemDetailCellIdentifier = @"ALPodcastItemDetai
     [self resetAudioStreamer];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ALPodcastItemDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kALPodcastItemDetailCellIdentifier forIndexPath:indexPath];
-    
-    return cell;
-}
-
 #pragma mark - ALPodcastItemCellDelegate
 
 - (void)podcastItemCellDidBeginPulling:(ALPodcastItemCell *)cell
 {
     [_webView loadHTMLString:cell.feedItem.desc baseURL:nil];
     [_scrollView2 setScrollEnabled:NO];
-    [_tableView reloadData];
 }
 
 - (void)podcastItemCell:(ALPodcastItemCell *)cell didChangePullOffset:(CGFloat)offset
