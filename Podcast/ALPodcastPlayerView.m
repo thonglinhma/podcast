@@ -41,6 +41,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
 @property (nonatomic, weak) IBOutlet UILabel  *labelTitle;
 @property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) IBOutlet UILabel *totalFeedItemsLabel;
+@property (nonatomic, weak) IBOutlet UIProgressView *progressView;
 
 @property (nonatomic, strong) ALDynamicCollectionViewFlowLayout *dynamicLayout;
 @property (nonatomic, strong) NSArray *feedItems;
@@ -82,12 +83,7 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
     self.feedItems = [[ALPodcastStore sharedStore] fetchFeedItems];
     self.feedInfo = [[ALPodcastStore sharedStore] fetchFeedInfo];
     
-    
-//    UIImage *normalSliderImage = [UIImage circularImageWithColor:[UIColor whiteColor] size:CGSizeMake(24, 24)];
-//    [_sliderProgress setThumbImage:normalSliderImage forState:UIControlStateNormal];
-//    
-//    UIImage *highlighedSliderImage = [UIImage circularImageWithColor:[UIColor whiteColor] size:CGSizeMake(24, 24)];
-//    [_sliderProgress setThumbImage:highlighedSliderImage forState:UIControlStateHighlighted];
+    _progressView.trackTintColor = [UIColor clearColor];
     
     [_scrollView addSubview:_contentView];
     _scrollView.contentInset = UIEdgeInsetsMake(kALDefaultContentInset, 0, 0, 0);
@@ -293,6 +289,16 @@ static NSString *const kALPodcastItemCellIdentifier = @"ALPodcastItemCell";
             self.labelDuration.text = [NSString stringWithFormat:@"-%.2d:%.2d:%.2d", hh, mm, ss];
         } else {
             self.labelDuration.text = [NSString stringWithFormat:@"-%.2d:%.2d", mm, ss];
+        }
+        
+        double receivedLength = (double)[_audioStreamer receivedLength] / 1024 / 1024;
+        double expectedLength = (double)[_audioStreamer expectedLength] / 1024 / 1024;
+        
+        if (receivedLength == expectedLength) {
+            self.progressView.hidden = YES;
+        } else {
+            self.progressView.hidden = NO;
+            self.progressView.progress = receivedLength/ expectedLength;
         }
 
     }

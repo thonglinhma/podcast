@@ -31,6 +31,7 @@
                 <outlet property="labelDuration" destination="siR-gC-9cS" id="3t5-yt-bAq"/>
                 <outlet property="labelTimePlayed" destination="UaP-lI-AiL" id="7ro-UX-clK"/>
                 <outlet property="labelTitle" destination="Pgt-2g-gs3" id="3EG-CC-rva"/>
+                <outlet property="progressView" destination="cLs-u1-c4P" id="fhe-vu-Qui"/>
                 <outlet property="scrollView" destination="3dh-Vt-7OG" id="pfi-PO-te5"/>
                 <outlet property="scrollView2" destination="BYp-Xb-HGK" id="oFX-Wc-ieU"/>
                 <outlet property="sliderProgress" destination="wcp-b1-Mje" id="lLu-zS-ys0"/>
@@ -116,6 +117,10 @@
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-u1-c4P">
+                            <rect key="frame" x="0.0" y="1" width="310" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
                     </subviews>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
