@@ -64,7 +64,7 @@
         _subtitleLabel.font = [UIFont systemFontOfSize:14];
         [_contentView addSubview:_subtitleLabel];
         
-        self.downloadButton = [[ALDownloadButton alloc] initWithFrame:CGRectMake(275, 20, 30, 30)];
+        self.downloadButton = [[ALDownloadButton alloc] initWithFrame:CGRectMake(270, 20, 30, 30)];
         _downloadButton.delegate = self;
         [_contentView addSubview:_downloadButton];
         
@@ -73,10 +73,8 @@
     return self;
 }
 
-- (void)layoutSubviews
+- (void)setupLayoutSubViews
 {
-    [super layoutSubviews];
-    
     UIView *contentView = self.contentView;
     CGRect bounds = contentView.bounds;
     
@@ -87,7 +85,7 @@
     _scrollView.contentSize = CGSizeMake(pageWidth * 2, CGRectGetHeight(bounds));
     _contentView.frame = [_scrollView convertRect:CGRectMake(5, 0, CGRectGetWidth(bounds) - 2*5, CGRectGetHeight(bounds)) fromView:contentView];
     CGFloat y = 5;
-
+    
     if (_downloadButton.hidden) {
         _titleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 20) fromView:contentView];
         y += CGRectGetHeight(_titleLabel.bounds) + 5;
@@ -97,7 +95,13 @@
         y += CGRectGetHeight(_titleLabel.bounds) + 5;
         _subtitleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - (4*5 + CGRectGetWidth(_downloadButton.frame)), 40) fromView:contentView];
     }
+}
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    [self setupLayoutSubViews];
 }
 
 - (void)setFeedItem:(ALFeedItem *)feedItem
@@ -172,7 +176,8 @@
         self.downloadButton.hidden = YES;
         self.feedItem.filePath = filePath;
         [[ALPodcastStore sharedStore] saveChanges];
-        [self setNeedsDisplay];
+        
+        [self setupLayoutSubViews];
     }
 }
 
