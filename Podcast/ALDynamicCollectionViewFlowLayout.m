@@ -78,7 +78,7 @@
         center.y +=  MIN(scrollDelta, scrollDelta * scrollResistance);
         item.center = center;
         
-        [_dynamicAnimator updateItemFromCurrentState:item];
+        [_dynamicAnimator updateItemUsingCurrentState:item];
     }
     
     return NO;
