@@ -31,6 +31,8 @@
 + (UIColor *)silverColor;
 + (UIColor *)concreteColor;
 + (UIColor *)asbestosColor;
++ (UIColor *)ios7Blue;
++ (UIColor *)ios7Gray;
 
 + (UIColor *)blendedColorWithForegroundColor:(UIColor *)foregroundColor
                               backgroundColor:(UIColor *)backgroundColor

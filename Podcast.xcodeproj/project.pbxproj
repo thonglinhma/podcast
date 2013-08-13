@@ -10,8 +10,9 @@
 		B94188C41783D33F00C2DCD1 /* ALPodcastStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188C31783D33F00C2DCD1 /* ALPodcastStore.m */; };
 		B94188D01783D75200C2DCD1 /* ALFeedItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188CF1783D75200C2DCD1 /* ALFeedItem+Additions.m */; };
 		B94188D81783DA3F00C2DCD1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94188D71783DA3F00C2DCD1 /* CoreData.framework */; };
-		B94188DB178401FC00C2DCD1 /* ALFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188DA178401FC00C2DCD1 /* ALFeedItem.m */; };
 		B94188DE178401FC00C2DCD1 /* ALFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */; };
+		B9A1A51117BA105F003A12AE /* ALDownloadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A1A51017BA105F003A12AE /* ALDownloadButton.m */; };
+		B9A1A51417BA3013003A12AE /* ALFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A1A51317BA3013003A12AE /* ALFeedItem.m */; };
 		B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EB177D46170000004E /* AlLiveBlurView.m */; };
 		B9C757EF177D87AF0000004E /* ALPodcastItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */; };
 		B9C757F2177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */; };
@@ -126,17 +127,19 @@
 		B94188CE1783D75200C2DCD1 /* ALFeedItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALFeedItem+Additions.h"; sourceTree = "<group>"; };
 		B94188CF1783D75200C2DCD1 /* ALFeedItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALFeedItem+Additions.m"; sourceTree = "<group>"; };
 		B94188D71783DA3F00C2DCD1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B94188D9178401FC00C2DCD1 /* ALFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedItem.h; sourceTree = "<group>"; };
-		B94188DA178401FC00C2DCD1 /* ALFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedItem.m; sourceTree = "<group>"; };
 		B94188DC178401FC00C2DCD1 /* ALFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedInfo.h; sourceTree = "<group>"; };
 		B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedInfo.m; sourceTree = "<group>"; };
+		B9A1A50F17BA105F003A12AE /* ALDownloadButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDownloadButton.h; sourceTree = "<group>"; };
+		B9A1A51017BA105F003A12AE /* ALDownloadButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDownloadButton.m; sourceTree = "<group>"; };
+		B9A1A51217BA3013003A12AE /* ALFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFeedItem.h; sourceTree = "<group>"; };
+		B9A1A51317BA3013003A12AE /* ALFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFeedItem.m; sourceTree = "<group>"; };
 		B9C757EA177D46170000004E /* AlLiveBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlLiveBlurView.h; sourceTree = "<group>"; };
 		B9C757EB177D46170000004E /* AlLiveBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlLiveBlurView.m; sourceTree = "<group>"; };
 		B9C757ED177D87AF0000004E /* ALPodcastItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPodcastItemCell.h; sourceTree = "<group>"; };
 		B9C757EE177D87AF0000004E /* ALPodcastItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPodcastItemCell.m; sourceTree = "<group>"; };
 		B9C757F0177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDynamicCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDynamicCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		B9D1602C177C0B9A00FE0061 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D1602C177C0B9A00FE0061 /* ESLPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESLPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D1602F177C0B9A00FE0061 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B9D16031177C0B9A00FE0061 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B9D16033177C0B9A00FE0061 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -364,7 +367,7 @@
 		B9D1602D177C0B9A00FE0061 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9D1602C177C0B9A00FE0061 /* Podcast.app */,
+				B9D1602C177C0B9A00FE0061 /* ESLPod.app */,
 				B9D1604D177C0B9A00FE0061 /* PodcastTests.xctest */,
 			);
 			name = Products;
@@ -490,6 +493,8 @@
 				B9C757F1177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m */,
 				DB0132441780777E008445B2 /* ALUIScrollView.h */,
 				DB0132451780777E008445B2 /* ALUIScrollView.m */,
+				B9A1A50F17BA105F003A12AE /* ALDownloadButton.h */,
+				B9A1A51017BA105F003A12AE /* ALDownloadButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -497,11 +502,11 @@
 		B9D16068177C0FE000FE0061 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B94188D9178401FC00C2DCD1 /* ALFeedItem.h */,
-				B94188DA178401FC00C2DCD1 /* ALFeedItem.m */,
 				B94188DC178401FC00C2DCD1 /* ALFeedInfo.h */,
 				B94188DD178401FC00C2DCD1 /* ALFeedInfo.m */,
 				DBA6C576178181290063F7B3 /* Podcast.xcdatamodeld */,
+				B9A1A51217BA3013003A12AE /* ALFeedItem.h */,
+				B9A1A51317BA3013003A12AE /* ALFeedItem.m */,
 				B94188C21783D33F00C2DCD1 /* ALPodcastStore.h */,
 				B94188C31783D33F00C2DCD1 /* ALPodcastStore.m */,
 				B94188CE1783D75200C2DCD1 /* ALFeedItem+Additions.h */,
@@ -736,7 +741,7 @@
 			);
 			name = Podcast;
 			productName = Podcast;
-			productReference = B9D1602C177C0B9A00FE0061 /* Podcast.app */;
+			productReference = B9D1602C177C0B9A00FE0061 /* ESLPod.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B9D1604C177C0B9A00FE0061 /* PodcastTests */ = {
@@ -826,6 +831,7 @@
 			files = (
 				DB208271177E8B5C001DC559 /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				B9C757F2177D89CD0000004E /* ALDynamicCollectionViewFlowLayout.m in Sources */,
+				B9A1A51417BA3013003A12AE /* ALFeedItem.m in Sources */,
 				B9D160A9177C10D900FE0061 /* NIDebuggingTools.m in Sources */,
 				B9D160F1177C13C100FE0061 /* ALStoryboard.m in Sources */,
 				B9D160B2177C10D900FE0061 /* NINonEmptyCollectionTesting.m in Sources */,
@@ -872,7 +878,7 @@
 				B9C757EC177D46170000004E /* AlLiveBlurView.m in Sources */,
 				B94188C41783D33F00C2DCD1 /* ALPodcastStore.m in Sources */,
 				B9D160B6177C10D900FE0061 /* NIRuntimeClassModifications.m in Sources */,
-				B94188DB178401FC00C2DCD1 /* ALFeedItem.m in Sources */,
+				B9A1A51117BA105F003A12AE /* ALDownloadButton.m in Sources */,
 				B9D160B0177C10D900FE0061 /* NINavigationAppearance.m in Sources */,
 				B9D160A8177C10D900FE0061 /* NIDataStructures.m in Sources */,
 				B9D1603C177C0B9A00FE0061 /* main.m in Sources */,
@@ -1032,7 +1038,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2";
 				INFOPLIST_FILE = "Podcast/Podcast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ESLPod;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1048,7 +1054,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2";
 				INFOPLIST_FILE = "Podcast/Podcast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ESLPod;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

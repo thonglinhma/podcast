@@ -10,12 +10,14 @@
 #import "ALUIScrollView.h"
 #import "ALFeedItem.h"
 #import "NSString+Additions.h"
+#import "ALDownloadButton.h"
 
 #define PULL_THRESHOLD 60
 
-@interface ALPodcastItemCell()<UIScrollViewDelegate>
+@interface ALPodcastItemCell()<UIScrollViewDelegate, ALDownloadButtonDelegate>
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subtitleLabel;
+@property (nonatomic, strong) ALDownloadButton *downloadButton;
 
 - (void)scrollingEnded;
 @end
@@ -62,6 +64,10 @@
         _subtitleLabel.font = [UIFont systemFontOfSize:14];
         [_contentView addSubview:_subtitleLabel];
         
+        self.downloadButton = [[ALDownloadButton alloc] initWithFrame:CGRectMake(275, 20, 30, 30)];
+        _downloadButton.delegate = self;
+        [_contentView addSubview:_downloadButton];
+        
         
     }
     return self;
@@ -81,10 +87,17 @@
     _scrollView.contentSize = CGSizeMake(pageWidth * 2, CGRectGetHeight(bounds));
     _contentView.frame = [_scrollView convertRect:CGRectMake(5, 0, CGRectGetWidth(bounds) - 2*5, CGRectGetHeight(bounds)) fromView:contentView];
     CGFloat y = 5;
-    
-    _titleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 20) fromView:contentView];
-    y += CGRectGetHeight(_titleLabel.bounds) + 5;
-    _subtitleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 40) fromView:contentView];
+
+    if (_downloadButton.hidden) {
+        _titleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 20) fromView:contentView];
+        y += CGRectGetHeight(_titleLabel.bounds) + 5;
+        _subtitleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - 2*5, 40) fromView:contentView];
+    } else {
+        _titleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - (4*5 + CGRectGetWidth(_downloadButton.frame)), 20) fromView:contentView];
+        y += CGRectGetHeight(_titleLabel.bounds) + 5;
+        _subtitleLabel.frame = [_contentView convertRect:CGRectMake(15, y, CGRectGetWidth(_contentView.bounds) - (4*5 + CGRectGetWidth(_downloadButton.frame)), 40) fromView:contentView];
+    }
+
 }
 
 - (void)setFeedItem:(ALFeedItem *)feedItem
@@ -94,6 +107,13 @@
     if (_feedItem) {
         _titleLabel.text = _feedItem.title;
         _subtitleLabel.text = [_feedItem.desc stringByStrippingHTML];
+        _downloadButton.pathToDownload = _feedItem.mediaUrl;
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:_feedItem.filePath]) {
+            _downloadButton.hidden = YES;
+        } else {
+            _downloadButton.hidden = NO;
+        }
     }
 }
 
@@ -144,5 +164,16 @@
     [self scrollingEnded];
 }
 
+#pragma mark - ALDownloadButtonDelegate
+
+- (void)downloadButton:(ALDownloadButton *)downloadButton didDownloadFile:(NSString *)filePath
+{
+    if (filePath) {
+        self.downloadButton.hidden = YES;
+        self.feedItem.filePath = filePath;
+        [[ALPodcastStore sharedStore] saveChanges];
+        [self setNeedsDisplay];
+    }
+}
 
 @end

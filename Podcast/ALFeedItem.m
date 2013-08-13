@@ -2,7 +2,7 @@
 //  ALFeedItem.m
 //  Podcast
 //
-//  Created by Mike Tran on 7/3/13.
+//  Created by Mike Tran on 8/13/13.
 //  Copyright (c) 2013 Ogilvy & Mather (s) Pte Ltd. All rights reserved.
 //
 
@@ -11,11 +11,12 @@
 
 @implementation ALFeedItem
 
-@dynamic link;
-@dynamic title;
 @dynamic desc;
-@dynamic pubDate;
-@dynamic mediaUrl;
+@dynamic link;
 @dynamic mediaType;
+@dynamic mediaUrl;
+@dynamic pubDate;
+@dynamic title;
+@dynamic filePath;
 
 @end

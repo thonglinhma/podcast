@@ -12,6 +12,9 @@
 
 - (NSURL *)audioFileURL
 {
+    if (self.filePath.length > 0) {
+        return [NSURL fileURLWithPath:self.filePath];
+    }
     return [NSURL URLWithString:self.mediaUrl];
 }
 
